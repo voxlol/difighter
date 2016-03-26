@@ -1,0 +1,13 @@
+body#application-score {
+  background-color: #333;
+  color: #FFF;
+  padding: 20px; }
+  body#application-score table {
+    border-collapse: separate;
+    border-spacing: 25spx 0; }
+  body#application-score table th {
+    padding: 5px 10px 10px 10px;
+    text-align: left; }
+  body#application-score table td {
+    padding: 5px 10px 5px 10px;
+    text-align: left; }

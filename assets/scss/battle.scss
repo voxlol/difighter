@@ -1,0 +1,55 @@
+body#application-battle {
+//	background: url(../img/backgrounds/background1.gif)  no-repeat;
+//	background-size: 1525px 1080px;
+	&.battle-background {
+
+	}
+	#statusbars{
+		width: 1200px;
+		margin: 75px auto 0 auto;
+	}
+	#versus{
+		width: 150px;
+	}
+	#versus img{
+		width: 100px;
+		height: 100px;
+		position: relative;
+		top: -30px;
+	}
+	.fighter-name{
+		font-size: 18pt;
+		color: #fff;
+		text-shadow: 4px 4px #333;
+	}
+	.energy-bar{
+		height: 50px;
+		margin: auto;
+		border: solid;
+		background-color: #F00;
+	}
+	.energy-bar-block{
+		background-color: #0F0;
+		display: inline-block;
+		margin-right: -15px;
+		height: 44px;
+		width: 94px;
+	}
+	#fight img{
+		padding-top: 100px;
+		display:block;
+    margin:auto;
+    visibility: hidden;
+    animation-name: fightFade;
+    animation-duration: 2s;
+	}
+
+	@keyframes fightFade {
+		0%, 100%{
+			opacity: 0;
+	    	visibility: hidden;
+		}
+		50%{opacity: 1;
+	    	visibility: visible;}
+	}
+}

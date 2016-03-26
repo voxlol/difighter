@@ -1,0 +1,39 @@
+body#application-battle {
+  background: url(../images/backgrounds/background1.gif) no-repeat;
+  background-size: 1525px 1080px; }
+  body#application-battle #statusbars {
+    width: 1200px;
+    margin: 75px auto 0 auto; }
+  body#application-battle #versus {
+    width: 150px; }
+  body#application-battle #versus img {
+    width: 100px;
+    height: 100px; }
+  body#application-battle .fighter-name {
+    font-size: 18pt;
+    text-shadow: 2px 2px #CC0000; }
+  body#application-battle .energy-bar {
+    height: 50px;
+    margin: auto;
+    border: solid;
+    background-color: #F00; }
+  body#application-battle .energy-bar-block {
+    background-color: #0F0;
+    display: inline-block;
+    margin-right: -15px;
+    height: 44px;
+    width: 94px; }
+  body#application-battle #fight img {
+    padding-top: 100px;
+    display: block;
+    margin: auto;
+    visibility: hidden;
+    animation-name: fightFade;
+    animation-duration: 2s; }
+@keyframes fightFade {
+  0%, 100% {
+    opacity: 0;
+    visibility: hidden; }
+  50% {
+    opacity: 1;
+    visibility: visible; } }

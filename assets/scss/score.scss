@@ -1,0 +1,33 @@
+body#application-score {
+	background-color: #333;
+	color: #FFF;
+	padding: 10px;
+	table{
+		border-collapse: separate;
+	  border-spacing: 25px 0;
+		width: 100%;
+	}
+	table th{
+		padding: 5px 5px 5px 5px;
+		font-size: 10px;
+		color: yellow;
+	}
+
+	table td{
+		padding: 8px 5px;
+		font-size: 11px;
+		&.name {
+		  text-align: left;
+		}
+		&.percentage {
+			text-align: right;
+		}
+		&.win {
+			text-align: right;
+		}
+		&.loss {
+			text-align: right;
+		}
+	}
+}
+
