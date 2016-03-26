@@ -1,8 +1,32 @@
+body {
+	background-color: #020044;
+}
 body#application-battle {
 //	background: url(../img/backgrounds/background1.gif)  no-repeat;
 //	background-size: 1525px 1080px;
-	&.battle-background {
-
+	#battle-fight {
+		width: 1466px;
+		height: 1080px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		&.background-1 {
+			background-image: url(../img/backgrounds/1.gif);
+		}
+		&.background-2 {
+			background-image: url(../img/backgrounds/2.gif);
+		}
+		&.background-3 {
+			background-image: url(../img/backgrounds/3.gif);
+		}
+		&.background-4 {
+			background-image: url(../img/backgrounds/4.gif);
+		}
+		&.background-5 {
+			background-image: url(../img/backgrounds/5.gif);
+		}
+		&.background-6 {
+			background-image: url(../img/backgrounds/6.gif);
+		}
 	}
 	#statusbars{
 		width: 1200px;
@@ -51,5 +75,30 @@ body#application-battle {
 		}
 		50%{opacity: 1;
 	    	visibility: visible;}
+	}
+
+
+	#battle-preview-box {
+		margin-top: 150px;
+		.vs-sign {
+			position: relative;
+			top: 190px;
+			font-size: 48px;
+			color: #fff;
+		}
+		.name {
+			margin-top: 20px;
+			padding: 10px;
+			color: yellow;
+			font-size: 30px;
+			text-align: center;
+		}
+		.stats {
+			margin-top: 20px;
+			.stat-label {
+				color: #fff;
+				font-size: 12px;
+			}
+		}
 	}
 }

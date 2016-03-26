@@ -15,9 +15,9 @@
 			'skills' => array(
 				'mysql' => 3,
 				'objective-c' => 3,
-				'php' => 3,
-				'something' => 3,
-				'something' => 3,
+				'php' => 2,
+				'something' => 1,
+				'soasdfmething' => 3,
 			),
 		),
 		'battle' => array(
@@ -47,8 +47,97 @@
 		)
 	);
 ?>
+<div class="container" id="battle-preview-box" style="display:none;">
+	<div class="row">
+		<div class="col-sm-5">
+			<img src="http://placehold.it/500x500" class="img-responsive">
+			<div class="name"><?=$data['player_1']['name']?></div>
+			<div class="stats">
+				<?
+					foreach($data['player_1']['skills'] as $skill_name => $skill_point) {
+						switch($skill_point) {
+							default:
+								$percent = 0;
+							break;
+							case 1:
+								$percent = 33;
+							break;
+							case 2:
+								$percent = 66;
+							break;
+							case 3:
+								$percent = 100;
+							break;
+						}
+				?>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="stat-label">
+							<?=$skill_name?>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="progress" style="background-color:none;">
+						  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?=$percent?>" aria-valuemin="0" aria-valuemax="100" style="width: <?=$percent?>%"></div>
+						</div>
+					</div>
+				</div>
+				<?
+					}
+				?>
+			</div>
+		</div>
+		<div class="col-sm-2">
+			<div class="text-center vs-sign">VS</div>
+		</div>
+		<div class="col-sm-5">
+			<img src="http://placehold.it/500x500" class="img-responsive">
+			<div class="name"><?=$data['player_2']['name']?></div>
+			<div class="stats">
+				<?
+					foreach($data['player_2']['skills'] as $skill_name => $skill_point) {
+						switch($skill_point) {
+							default:
+								$percent = 0;
+							break;
+							case 1:
+								$percent = 33;
+							break;
+							case 2:
+								$percent = 66;
+							break;
+							case 3:
+								$percent = 100;
+							break;
+						}
+				?>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="stat-label">
+							<?=$skill_name?>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="progress" style="background-color:none;">
+						  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?=$percent?>" aria-valuemin="0" aria-valuemax="100" style="width: <?=$percent?>%"></div>
+						</div>
+					</div>
+				</div>
+				<?
+					}
+				?>
+			</div>
+		</div>
+	</div>
+</div>
 
+<?
+	$background = rand(1, 6);
+	$bg_music = rand(1, 4);
+?>
+<div id="battle-fight" class="background-<?=$background?>" style="display:none;" data-music="<?=$bg_music?>">
 
+</div>
 
 <?
 /*

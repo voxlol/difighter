@@ -2,6 +2,26 @@
 body {
   font-family: "Press Start 2P"; }
 
+body {
+  background-color: #020044; }
+
+body#application-battle #battle-fight {
+  width: 1466px;
+  height: 1080px;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  body#application-battle #battle-fight.background-1 {
+    background-image: url(../img/backgrounds/1.gif); }
+  body#application-battle #battle-fight.background-2 {
+    background-image: url(../img/backgrounds/2.gif); }
+  body#application-battle #battle-fight.background-3 {
+    background-image: url(../img/backgrounds/3.gif); }
+  body#application-battle #battle-fight.background-4 {
+    background-image: url(../img/backgrounds/4.gif); }
+  body#application-battle #battle-fight.background-5 {
+    background-image: url(../img/backgrounds/5.gif); }
+  body#application-battle #battle-fight.background-6 {
+    background-image: url(../img/backgrounds/6.gif); }
 body#application-battle #statusbars {
   width: 1200px;
   margin: 75px auto 0 auto; }
@@ -41,6 +61,25 @@ body#application-battle #fight img {
   50% {
     opacity: 1;
     visibility: visible; } }
+body#application-battle #battle-preview-box {
+  margin-top: 150px; }
+  body#application-battle #battle-preview-box .vs-sign {
+    position: relative;
+    top: 190px;
+    font-size: 48px;
+    color: #fff; }
+  body#application-battle #battle-preview-box .name {
+    margin-top: 20px;
+    padding: 10px;
+    color: yellow;
+    font-size: 30px;
+    text-align: center; }
+  body#application-battle #battle-preview-box .stats {
+    margin-top: 20px; }
+    body#application-battle #battle-preview-box .stats .stat-label {
+      color: #fff;
+      font-size: 12px; }
+
 body#application-score {
   background-color: #333;
   color: #FFF;
