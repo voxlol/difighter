@@ -240,7 +240,7 @@ class Battle {
 				'totals' => array(
 					'player_1' => 0,
 					'player_2' => 0
-				),
+				)
 			)
 		);
 
@@ -268,15 +268,25 @@ class Battle {
 			}
 		}
 
-		$sharedSkills = [];
+		$sharedSkills = []; // Shared skills
+		$sharedActualSkills = []; // Shared skills that are not 0
 
 		foreach($skills[1] AS $skill=>$rating) {
 			if(!array_key_exists($skill, $skills[0])) {
 				$skills[0][$skill] = 0;
 			} else {
-				if(count($sharedSkills) < 5) {
-					$sharedSkills[] = $skill;
-				}
+				$sharedActualSkills[] = $skill;
+			}
+		}
+
+		$intSkill = 0;
+
+		foreach($sharedActualSkills AS $skill) {
+			$intSkill++;
+
+			if($intSkill == 5) {
+				$sharedSkills[] = $skill;
+				break;
 			}
 		}
 
@@ -336,13 +346,53 @@ class Battle {
 		$totals = $fighters['battle']['totals'];
 
 		$winner = ($totals['player_1'] > $totals['player_2']) ? 'player_1' : 'player_2';
+		$loser = ($totals['player_1'] > $totals['player_2']) ? 'player_2' : 'player_1';
 
 		$fighters['battle']['winner'] = array(
 			'name' => $fighters[$winner]['name'],
 			'score' => $totals[$winner]
 		);
 
+		$winner = $fighters[$winner]['name'];
+		$loser = $fighters[$loser]['name'];
+
+		$this->update_standings($winner, $loser);
+
 		return $fighters;
+	}
+
+	public function update_standings($winner, $loser) {
+		$data = json_decode(file_get_contents('../data/results.json'));
+
+		foreach($data AS $intItem=>$item) {
+			if($item->name == $winner) {
+				$data[$intItem]->win++;
+				$data[$intItem]->rate = $data[$intItem]->win / ($data[$intItem]->win + $data[$intItem]->loss);
+			}
+
+			if($item->name == $loser) {
+				$data[$intItem]->loss++;
+				$data[$intItem]->rate = $data[$intItem]->win / ($data[$intItem]->win + $data[$intItem]->loss);
+			}
+		}
+
+		file_put_contents('../data/results.json', $data);
+	}
+
+	public function get_battle_results() {
+		$data = json_decode(file_get_contents('../data/results.json'));
+		$rankings = [];
+		$results = [];
+
+		foreach($data AS $intItem=>$item) {
+			$rankings[$intItem] = $item->rate;
+		}
+
+		foreach($rankings AS $intRanking=>$ranking) {
+			$results[] = $data[$intRanking];
+		}
+
+		return $results;
 	}
 
 	private function get_skills($player) {
