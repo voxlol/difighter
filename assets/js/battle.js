@@ -3,6 +3,8 @@ $(document).ready(function() {
 	var application = $('body').attr('id');
 	var audio;
 	var winner_id = $('#battle-fight').attr('data-winner-id');
+	var loser_id = $('#battle-fight').attr('data-loser-id');
+
 
 	function play_sound_effect(asset, delay) {
 		if (delay > 0) {
@@ -34,6 +36,14 @@ $(document).ready(function() {
 		});
 	}
 
+	function add_trophy(round_winner) {
+		var trophy_img = '<img src="'+base_url+'assets/img/trophy.gif" />';
+		setTimeout(function(){
+			$('#player-names .'+round_winner+' .trophy').append(trophy_img);
+		}, 1000);
+
+	}
+
 	function toggle_round_winner(winner) {
 		if (winner == 'player_1') {
 			$('#fighters .player-2 .hit').removeClass('hide');
@@ -52,6 +62,7 @@ $(document).ready(function() {
 			$('#fighters .player-2 .standing').addClass('hide');
 			$('#fighters .player-2 .fighting').removeClass('hide');
 		}
+		add_trophy(winner);
 	}
 
 	function neutral() {
@@ -82,18 +93,43 @@ $(document).ready(function() {
 			$('#fighters .player-1 .fighting').addClass('hide');
 		}
 		play_sound_effect('death', 0);
-		$('#subject .winner-name').fadeIn(500, function(){
-			if($('#battle-fight').attr('data-score') == 5) {
-				play_sound_effect('you-win-perfect', 0);
-			} else {
-				play_sound_effect('you-win', 0);
-			}
+
+		if($('#battle-fight').attr('data-score') == 5) {
+			play_sound_effect('you-win-perfect', 0);
+			$('#subject .winner-item').fadeIn(500, function(){
+				setTimeout(function(){
+					$('#battle-fight').fadeOut(500, function(){
+						show_battle_winner(winner_id);
+					});
+				}, 3000);
+			});
+		} else {
+			play_sound_effect('you-win', 0);
+			$('#subject .winner-name').fadeIn(500, function(){
+				setTimeout(function(){
+					$('#battle-fight').fadeOut(500, function(){
+						show_battle_winner(winner_id);
+					});
+				}, 3000);
+			});
+		}
+	}
+
+	//	Show battle winner
+	function show_battle_winner(winner_id) {
+		play_sound_effect('battle-end', 0);
+		$('#battle-winner-info').fadeIn(500, function(){
 			setTimeout(function(){
-				$('#battle-fight').fadeOut(500, function(){
-					window.location = base_url + 'views/main.php?application=battle&winner='+winner_id;
+				$('#battle-winner-info').fadeOut(500, function(){
+					new_battle(winner_id);
 				});
-			}, 3000);
+			}, 5000);
 		});
+	}
+
+	//	Start New Battle
+	function new_battle(winner_id) {
+		window.location = base_url + 'index.php?application=battle&winner='+winner_id+'&loser='+loser_id;
 	}
 
 	//	battle
@@ -107,7 +143,7 @@ $(document).ready(function() {
 		audio_intro_music.play();
 
 		$('#battle-preview-box').delay(700).fadeIn(500, function(){
-			$(this).delay(3000).fadeOut(500, function(){
+			$(this).delay(4000).fadeOut(500, function(){
 				$('#battle-fight').fadeIn(500);
 
 				var bg_music = $('#battle-fight').attr("data-music");
@@ -116,6 +152,8 @@ $(document).ready(function() {
 			  audio_bg_music.setAttribute('autoplay', 'autoplay');
 			  audio_bg_music.load();
 				audio_bg_music.play();
+
+				var round_duration = 3000;
 
 				//	round 1
 				setTimeout(function() {
@@ -126,7 +164,7 @@ $(document).ready(function() {
 							toggle_round_winner(winner);
 							play_sound_effect('punch-1', 0);
 						}, 500);
-						$(this).delay(2000).fadeOut(500, function(){
+						$(this).delay(round_duration).fadeOut(500, function(){
 
 							//	round 2
 							neutral();
@@ -137,7 +175,7 @@ $(document).ready(function() {
 									toggle_round_winner(winner);
 									play_sound_effect('punch-2', 0);
 								}, 500);
-								$(this).delay(2000).fadeOut(500, function(){
+								$(this).delay(round_duration).fadeOut(500, function(){
 
 									//	round 3
 									neutral();
@@ -148,7 +186,7 @@ $(document).ready(function() {
 											toggle_round_winner(winner);
 											play_sound_effect('punch-3', 0);
 										}, 500);
-										$(this).delay(2000).fadeOut(500, function(){
+										$(this).delay(round_duration).fadeOut(500, function(){
 
 											//	round 4
 											neutral();
@@ -159,7 +197,7 @@ $(document).ready(function() {
 													toggle_round_winner(winner);
 													play_sound_effect('punch-1', 0);
 												}, 500);
-												$(this).delay(2000).fadeOut(500, function(){
+												$(this).delay(round_duration).fadeOut(500, function(){
 
 													//	round 5
 													neutral();
@@ -170,7 +208,7 @@ $(document).ready(function() {
 															toggle_round_winner(winner);
 															play_sound_effect('punch-2', 0);
 														}, 500);
-														$(this).delay(2000).fadeOut(500, function(){
+														$(this).delay(round_duration).fadeOut(500, function(){
 															toggle_player_death();
 															audio_bg_music.pause();
 														});
@@ -187,57 +225,10 @@ $(document).ready(function() {
 						});
 					});
 				}, 1000);
-
-
-
 			});
 		});
 
 	}
-
-	// //	INTRO
-  // var audioElement = document.createElement('audio');
-  // audioElement.setAttribute('src', base_url + 'assets/music/intro.mp3');
-  // audioElement.setAttribute('autoplay', 'autoplay');
-  // audioElement.load();
-	// audioElement.play();
-	//
-  // $.get();
-	// //
-  // // audioElement.addEventListener("load", function() {
-  // //     audioElement.play();
-  // // }, true);
-	// //
-  // // $('.play').click(function() {
-  // //     audioElement.play();
-  // // });
-	// //
-  // // $('.pause').click(function() {
-  // //     audioElement.pause();
-  // // });
-  // //
-  // //
-	//
-  // var sound_start = document.createElement('audio');
-  // sound_start.setAttribute('src', base_url + 'assets/music/start.mp3');
-	//
-	//
-	// $('[data-action]').click(function(e){
-	// 	e.preventDefault();
-	// 	var action = $(this).attr('data-action');
-	//
-	// 	switch(action) {
-	// 		case "start":
-	// 			var link = $(this).attr('href');
-	// 	    audioElement.pause();
-	// 		  sound_start.load();
-	// 			sound_start.play();
-	// 			sound_start.addEventListener("ended", function(){
-	// 				window.location = link;
-	// 			});
-	// 		break;
-	// 	}
-	// });
 
 
 });

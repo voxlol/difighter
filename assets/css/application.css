@@ -3,8 +3,14 @@ body {
   font-family: "Press Start 2P"; }
 
 body {
-  background-color: #020044; }
+  background-color: #020044;
+  color: #fff; }
 
+body#application-battle #battle-wrapper {
+  width: 1470px;
+  height: 1080px;
+  position: absolute;
+  left: 450px; }
 body#application-battle #battle-fight {
   width: 1466px;
   height: 1080px;
@@ -63,31 +69,51 @@ body#application-battle #fight img {
     visibility: visible; } }
 body#application-battle #subject {
   height: 300px; }
-  body#application-battle #subject .round .round-number {
-    font-size: 30px;
-    color: #f30;
-    text-shadow: 4px 4px #fff; }
-  body#application-battle #subject .round .subject-title {
+  body#application-battle #subject .round {
     position: relative;
-    top: 20px;
-    font-size: 50px;
-    color: #f30;
-    text-shadow: 4px 4px #fff; }
+    top: 100px; }
+    body#application-battle #subject .round .round-number {
+      font-size: 30px;
+      color: #f30;
+      text-shadow: 4px 4px #fff; }
+    body#application-battle #subject .round .subject-title {
+      position: relative;
+      top: 20px;
+      font-size: 50px;
+      color: #f30;
+      text-shadow: 4px 4px #fff; }
   body#application-battle #subject .winner-name {
     position: relative;
     top: 20px;
     font-size: 50px;
     color: #f30;
     text-shadow: 4px 4px #fff; }
+  body#application-battle #subject .winner-perfect {
+    margin-top: 20px;
+    font-size: 40px;
+    color: #f30;
+    text-shadow: 4px 4px #fff; }
 body#application-battle #player-names .player-name {
   margin-top: 25px;
-  height: 80px;
+  height: 45px;
   color: yellow;
   text-shadow: 4px 4px #000;
   font-size: 30px; }
+body#application-battle #player-names .trophy {
+  height: 40px;
+  position: relative;
+  margin-top: 10px; }
+  body#application-battle #player-names .trophy img {
+    width: 30px; }
+body#application-battle #player-names .player_1 .trophy img {
+  margin-right: 10px; }
+body#application-battle #player-names .player_2 .trophy {
+  float: right; }
+  body#application-battle #player-names .player_2 .trophy img {
+    margin-left: 10px; }
 body#application-battle #fighters {
   position: relative;
-  top: 300px; }
+  top: 250px; }
   body#application-battle #fighters .hit {
     position: absolute;
     z-index: 20; }
@@ -146,7 +172,7 @@ body#application-battle #fighters {
       filter: FlipH;
       -ms-filter: "FlipH"; }
 body#application-battle #battle-preview-box {
-  margin-top: 150px; }
+  margin-top: 100px; }
   body#application-battle #battle-preview-box .vs-sign {
     position: relative;
     top: 190px;
@@ -163,6 +189,22 @@ body#application-battle #battle-preview-box {
     body#application-battle #battle-preview-box .stats .stat-label {
       color: #fff;
       font-size: 12px; }
+body#application-battle #battle-winner-info {
+  margin-top: 120px; }
+  body#application-battle #battle-winner-info .name {
+    margin-top: 20px;
+    padding: 10px;
+    color: yellow;
+    font-size: 30px;
+    text-align: center; }
+  body#application-battle #battle-winner-info .records {
+    margin-top: 20px; }
+  body#application-battle #battle-winner-info .quote {
+    margin-top: 50px;
+    color: #fff;
+    font-size: 30px;
+    animation: type 4s steps(60, end);
+    line-height: 1.8em; }
 
 .bounce {
   animation: bounce 0.7s infinite;
@@ -198,26 +240,31 @@ body#application-battle #battle-preview-box {
     transform: translateX(-10px); }
   100% {
     transform: translateX(-4px); } }
-body#application-score {
-  background-color: #333;
-  color: #FFF;
+#score-table {
+  width: 450px;
+  height: 1080px;
+  position: absolute;
+  background-color: #111;
+  color: #eee;
   padding: 10px; }
-  body#application-score table {
+  #score-table table {
     border-collapse: separate;
     border-spacing: 25px 0;
     width: 100%; }
-  body#application-score table th {
-    padding: 5px 5px 5px 5px;
+  #score-table table th {
+    padding: 40px 0px 20px;
     font-size: 10px;
+    color: #666; }
+  #score-table table tr.highlight td {
     color: yellow; }
-  body#application-score table td {
-    padding: 8px 5px;
-    font-size: 11px; }
-    body#application-score table td.name {
+  #score-table table td {
+    padding: 10px 0px;
+    font-size: 10px; }
+    #score-table table td.name {
       text-align: left; }
-    body#application-score table td.percentage {
+    #score-table table td.percentage {
       text-align: right; }
-    body#application-score table td.win {
+    #score-table table td.win {
       text-align: right; }
-    body#application-score table td.loss {
+    #score-table table td.loss {
       text-align: right; }

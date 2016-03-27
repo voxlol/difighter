@@ -1,6 +1,5 @@
 <?php
 
-include_once '../modules/Kint/Kint.class.php';
 
 class Battle {
 	private $players;
@@ -361,6 +360,12 @@ class Battle {
 			'name' => $fighters[$winner]['name'],
 			'score' => $totals[$winner]
 		);
+		$fighters['battle']['loser'] = array(
+			'id' => $fighters[$loser]['id'],
+			'player' => $loser,
+			'name' => $fighters[$loser]['name'],
+			'score' => $totals[$loser]
+		);
 
 		$winner = $fighters[$winner]['name'];
 		$loser = $fighters[$loser]['name'];
@@ -371,7 +376,7 @@ class Battle {
 	}
 
 	public function update_standings($winner, $loser) {
-		$data = json_decode(file_get_contents('../data/results.json'));
+		$data = json_decode(file_get_contents('data/results.json'));
 
 		foreach($data AS $intItem=>$item) {
 			if($item->name == $winner) {
@@ -384,11 +389,11 @@ class Battle {
 				$data[$intItem]->rate = $data[$intItem]->win / ($data[$intItem]->win + $data[$intItem]->loss);
 			}
 		}
-		file_put_contents('../data/results.json', json_encode($data));
+		file_put_contents('data/results.json', json_encode($data));
 	}
 
 	public function get_battle_results() {
-		$data = json_decode(file_get_contents('../data/results.json'));
+		$data = json_decode(file_get_contents('data/results.json'));
 		$rankings = [];
 		$results = [];
 

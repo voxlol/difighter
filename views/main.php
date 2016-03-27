@@ -23,6 +23,6 @@
 ?>
 <script src="<?=BASE_URL?>assets/js/jquery.js"></script>
 <script src="<?=BASE_URL?>assets/js/bootstrap.min.js"></script>
-<script src="<?=BASE_URL?>assets/js/battle.js"></script>
+<script src="<?=BASE_URL?>assets/js/<?=$application?>.js"></script>
 </body>
 </html>

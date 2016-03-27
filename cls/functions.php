@@ -18,3 +18,7 @@ function get_percentage($skill_point) {
 
 	return $percent;
 }
+
+function cmp($a, $b) {
+  return $b->win - $a->win;
+}

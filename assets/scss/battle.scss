@@ -1,9 +1,16 @@
 body {
 	background-color: #020044;
+	color: #fff;
 }
 body#application-battle {
 //	background: url(../img/backgrounds/background1.gif)  no-repeat;
 //	background-size: 1525px 1080px;
+	#battle-wrapper {
+		width: 1470px;
+		height: 1080px;
+		position: absolute;
+		left: 450px;
+	}
 	#battle-fight {
 		width: 1466px;
 		height: 1080px;
@@ -80,6 +87,8 @@ body#application-battle {
 	#subject {
 		height: 300px;
 		.round {
+			position: relative;
+			top: 100px;
 			.round-number {
 				font-size: 30px;
 				color: #f30;
@@ -100,20 +109,49 @@ body#application-battle {
 			color: #f30;
 			text-shadow: 4px 4px #fff;
 		}
+		.winner-perfect {
+			margin-top: 20px;
+			font-size: 40px;
+			color: #f30;
+			text-shadow: 4px 4px #fff;
+		}
 	}
 	#player-names {
 		.player-name {
 			margin-top: 25px;
-			height: 80px;
+			height: 45px;
 			color: yellow;
 			text-shadow: 4px 4px #000;
 			font-size: 30px;
+		}
+		.trophy {
+			height: 40px;
+			position: relative;
+			margin-top: 10px;
+			img {
+				width: 30px;
+			}
+		}
+		.player_1 {
+			.trophy {
+				img {
+					margin-right: 10px;
+				}
+			}
+		}
+		.player_2 {
+			.trophy {
+				float: right;
+				img {
+					margin-left: 10px;
+				}
+			}
 		}
 	}
 
 	#fighters {
 		position: relative;
-		top: 300px;
+		top: 250px;
 		.hit {
 			position: absolute;
 			z-index: 20;
@@ -207,9 +245,8 @@ body#application-battle {
 		}
 	}
 
-
 	#battle-preview-box {
-		margin-top: 150px;
+		margin-top: 100px;
 		.vs-sign {
 			position: relative;
 			top: 190px;
@@ -229,6 +266,26 @@ body#application-battle {
 				color: #fff;
 				font-size: 12px;
 			}
+		}
+	}
+	#battle-winner-info {
+		margin-top: 120px;
+		.name {
+			margin-top: 20px;
+			padding: 10px;
+			color: yellow;
+			font-size: 30px;
+			text-align: center;
+		}
+		.records {
+			margin-top: 20px;
+		}
+		.quote {
+			margin-top: 50px;
+			color: #fff;
+			font-size: 30px;
+			animation: type 4s steps(60, end);
+			line-height: 1.8em;
 		}
 	}
 }

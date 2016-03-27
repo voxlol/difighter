@@ -1,6 +1,9 @@
-body#application-score {
-	background-color: #333;
-	color: #FFF;
+#score-table {
+	width: 450px;
+	height: 1080px;
+	position: absolute;
+	background-color: #111;
+	color: #eee;
 	padding: 10px;
 	table{
 		border-collapse: separate;
@@ -8,14 +11,17 @@ body#application-score {
 		width: 100%;
 	}
 	table th{
-		padding: 5px 5px 5px 5px;
+		padding: 40px 0px 20px;
 		font-size: 10px;
+		color: #666;
+	}
+	table tr.highlight td {
 		color: yellow;
 	}
 
 	table td{
-		padding: 8px 5px;
-		font-size: 11px;
+		padding: 10px 0px;
+		font-size: 10px;
 		&.name {
 		  text-align: left;
 		}
