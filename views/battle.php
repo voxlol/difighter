@@ -1,8 +1,20 @@
+<?
+	//	debug
+	$debug_battle_preview_box = "display:none;";
+	$debug_battle_winner_info = "display:none;";
+	$debug_battle_fight = "display:none;";
+
+	// $debug_battle_preview_box = "";
+	// $debug_battle_winner_info = "";
+	// $debug_battle_fight = "";
+?>
+
+
 <div id="battle-wrapper">
-	<div class="container" id="battle-preview-box" style="display:none;">
+	<div class="container" id="battle-preview-box" style="<?=$debug_battle_preview_box?>">
 		<div class="row">
 			<div class="col-sm-5">
-				<img src="http://placehold.it/500x500" class="img-responsive">
+				<img src="<?=BASE_URL?>assets/img/players/profile/<?=$results['player_1']['id']?>.jpg" class="img-responsive">
 				<div class="name"><?=$results['player_1']['name']?></div>
 				<div class="stats">
 					<?
@@ -37,7 +49,7 @@
 				<div class="text-center vs-sign">VS</div>
 			</div>
 			<div class="col-sm-5">
-				<img src="http://placehold.it/500x500" class="img-responsive">
+				<img src="<?=BASE_URL?>assets/img/players/profile/<?=$results['player_2']['id']?>.jpg" class="img-responsive">
 				<div class="name"><?=$results['player_2']['name']?></div>
 				<div class="stats">
 					<?
@@ -72,15 +84,21 @@
 	</div>
 
 	<?
-		$background = rand(1, 6);
-		$bg_music = rand(1, 4);
+		$background = rand(1, 22);
+		$bg_music = rand(1, 10);
 	?>
-	<div id="battle-fight" class="background-<?=$background?>" style="display:none;" data-music="<?=$bg_music?>"
+	<div id="battle-fight" class="background-<?=$background?>" style="<?=$debug_battle_fight?>" data-music="<?=$bg_music?>"
 		data-winner="<?=$results['battle']['winner']['player']?>"
 		data-score="<?=$results['battle']['winner']['score']?>"
 		data-loser-id="<?=$results['battle']['loser']['id']?>"
 		data-winner-id="<?=$results['battle']['winner']['id']?>">
 
+			<div class="player-profile-1">
+				<img src="<?=BASE_URL?>assets/img/players/profile/<?=$results['player_1']['id']?>.jpg" class="img-responsive">
+			</div>
+			<div class="player-profile-2">
+				<img src="<?=BASE_URL?>assets/img/players/profile/<?=$results['player_2']['id']?>.jpg" class="img-responsive">
+			</div>
 		<div id="player-names">
 			<div class="container">
 				<div class="row">
@@ -121,11 +139,11 @@
 								<div class="standing">
 									<div class="fire hide"><img src="<?=BASE_URL?>assets/img/fire.gif" /></div>
 									<div class="hit hide"><img src="<?=BASE_URL?>assets/img/hit.png" /></div>
-									<img class="head bounce" src="<?=BASE_URL?>assets/img/players/<?=$results['player_1']['id']?>.png" />
+									<img class="head bounce" src="<?=BASE_URL?>assets/img/players/head/<?=$results['player_1']['id']?>.png" />
 									<img class="gif" src="<?=BASE_URL?>assets/img/char-1-stand.gif" />
 								</div>
 								<div class="fighting hide">
-									<img class="head bounce-2" src="<?=BASE_URL?>assets/img/players/<?=$results['player_1']['id']?>.png" />
+									<img class="head bounce-2" src="<?=BASE_URL?>assets/img/players/head/<?=$results['player_1']['id']?>.png" />
 									<img class="gif" src="<?=BASE_URL?>assets/img/char-1-fight.gif" />
 								</div>
 							</div>
@@ -137,12 +155,16 @@
 								<div class="standing">
 									<div class="fire hide"><img src="<?=BASE_URL?>assets/img/fire.gif" /></div>
 									<div class="hit hide"><img src="<?=BASE_URL?>assets/img/hit.png" /></div>
-									<img class="head bounce-2" src="<?=BASE_URL?>assets/img/players/<?=$results['player_2']['id']?>.png" />
-									<img class="gif" src="<?=BASE_URL?>assets/img/char-2-stand.gif" />
+									<div class="flipX">
+										<img class="head bounce-2" src="<?=BASE_URL?>assets/img/players/head/<?=$results['player_2']['id']?>.png" />
+										<img class="gif" src="<?=BASE_URL?>assets/img/char-2-stand.gif" />
+									</div>
 								</div>
 								<div class="fighting hide">
-									<img class="head bounce-2" src="<?=BASE_URL?>assets/img/players/<?=$results['player_2']['id']?>.png" />
-									<img class="gif" src="<?=BASE_URL?>assets/img/char-2-fight.gif" />
+									<div class="flipX">
+										<img class="head bounce-2" src="<?=BASE_URL?>assets/img/players/head/<?=$results['player_2']['id']?>.png" />
+										<img class="gif" src="<?=BASE_URL?>assets/img/char-2-fight.gif" />
+									</div>
 								</div>
 							</div>
 						</div>
@@ -152,10 +174,11 @@
 		</div>
 	</div>
 
-	<div class="container" id="battle-winner-info" style="display:none;">
+	<div class="container" id="battle-winner-info" style="<?=$debug_battle_winner_info?>">
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3">
-				<img src="http://placehold.it/600x600" class="img-responsive">
+				<div class="winner">WINNER</div>
+				<img src="<?=BASE_URL?>assets/img/players/profile/<?=$results['battle']['winner']['id']?>.jpg" style="width: 100%;">
 				<div class="name"><?=$results['battle']['winner']['name']?></div>
 				<div class="row records">
 					<div class="col-sm-4 text-center">

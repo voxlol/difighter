@@ -151,8 +151,6 @@ class Battle {
 		$winner = $fighters[$winner]['name'];
 		$loser = $fighters[$loser]['name'];
 
-		$this->update_standings($winner, $loser);
-
 		return $fighters;
 	}
 

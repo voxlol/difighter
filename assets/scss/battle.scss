@@ -12,28 +12,31 @@ body#application-battle {
 		left: 450px;
 	}
 	#battle-fight {
-		width: 1466px;
 		height: 1080px;
 		background-size: cover;
 		background-repeat: no-repeat;
-		&.background-1 {
-			background-image: url(../img/backgrounds/1.gif);
-		}
-		&.background-2 {
-			background-image: url(../img/backgrounds/2.gif);
-		}
-		&.background-3 {
-			background-image: url(../img/backgrounds/3.gif);
-		}
-		&.background-4 {
-			background-image: url(../img/backgrounds/4.gif);
-		}
-		&.background-5 {
-			background-image: url(../img/backgrounds/5.gif);
-		}
-		&.background-6 {
-			background-image: url(../img/backgrounds/6.gif);
-		}
+		&.background-1 {background-image: url(../img/backgrounds/1.gif);}
+		&.background-2 {background-image: url(../img/backgrounds/2.gif);}
+		&.background-3 {background-image: url(../img/backgrounds/3.gif);}
+		&.background-4 {background-image: url(../img/backgrounds/4.gif);}
+		&.background-5 {background-image: url(../img/backgrounds/5.gif);}
+		&.background-6 {background-image: url(../img/backgrounds/6.gif);}
+		&.background-7 {background-image: url(../img/backgrounds/7.gif);}
+		&.background-8 {background-image: url(../img/backgrounds/8.gif);}
+		&.background-9 {background-image: url(../img/backgrounds/9.gif);}
+		&.background-10 {background-image: url(../img/backgrounds/10.gif);}
+		&.background-11 {background-image: url(../img/backgrounds/11.gif);}
+		&.background-12 {background-image: url(../img/backgrounds/12.gif);}
+		&.background-13 {background-image: url(../img/backgrounds/13.gif);}
+		&.background-14 {background-image: url(../img/backgrounds/14.gif);}
+		&.background-15 {background-image: url(../img/backgrounds/15.gif);}
+		&.background-16 {background-image: url(../img/backgrounds/16.gif);}
+		&.background-17 {background-image: url(../img/backgrounds/17.gif);}
+		&.background-18 {background-image: url(../img/backgrounds/18.gif);}
+		&.background-19 {background-image: url(../img/backgrounds/19.gif);}
+		&.background-20 {background-image: url(../img/backgrounds/20.gif);}
+		&.background-21 {background-image: url(../img/backgrounds/21.gif);}
+		&.background-22 {background-image: url(../img/backgrounds/22.gif);}
 	}
 	#statusbars{
 		width: 1200px;
@@ -110,15 +113,16 @@ body#application-battle {
 			text-shadow: 4px 4px #fff;
 		}
 		.winner-perfect {
-			margin-top: 20px;
+			top: 50px;
 			font-size: 40px;
 			color: #f30;
 			text-shadow: 4px 4px #fff;
+			position: relative;
 		}
 	}
 	#player-names {
 		.player-name {
-			margin-top: 25px;
+			margin-top: 35px;
 			height: 45px;
 			color: yellow;
 			text-shadow: 4px 4px #000;
@@ -148,7 +152,20 @@ body#application-battle {
 			}
 		}
 	}
-
+	.player-profile-1 {
+		position: absolute;
+    width: 100px;
+    top: 30px;
+    left: 30px;
+		border: 7px solid yellow;
+	}
+	.player-profile-2 {
+		position: absolute;
+    width: 100px;
+    top: 30px;
+    right: 30px;
+		border: 7px solid yellow;
+	}
 	#fighters {
 		position: relative;
 		top: 250px;
@@ -204,40 +221,33 @@ body#application-battle {
 				position: relative;
 				top: 10px;
 				.sprite {
+					.flipX {
+						-moz-transform: scaleX(-1);
+						-o-transform: scaleX(-1);
+						-webkit-transform: scaleX(-1);
+						transform: scaleX(-1);
+						filter: FlipH;
+						-ms-filter: "FlipH";
+					}
+					img.gif {
+						z-index: 5;
+					}
 					.standing {
-						.head {
+						img.head {
 							position: absolute;
 							z-index: 10;
 					    width: 248px;
 					    top: -64px;
-					    left: 284px;
-						}
-						img.gif {
-							z-index: 5;
-					    -moz-transform: scaleX(-1);
-					    -o-transform: scaleX(-1);
-					    -webkit-transform: scaleX(-1);
-					    transform: scaleX(-1);
-					    filter: FlipH;
-					    -ms-filter: "FlipH";
+					    right: 32px;
 						}
 					}
 					.fighting {
-						.head {
+						img.head {
 							position: absolute;
 							z-index: 10;
 					    width: 248px;
 					    top: -44px;
-					    left: 284px;
-						}
-						img.gif {
-							z-index: 5;
-					    -moz-transform: scaleX(-1);
-					    -o-transform: scaleX(-1);
-					    -webkit-transform: scaleX(-1);
-					    transform: scaleX(-1);
-					    filter: FlipH;
-					    -ms-filter: "FlipH";
+					    right: 110px;
 						}
 					}
 				}
@@ -269,7 +279,15 @@ body#application-battle {
 		}
 	}
 	#battle-winner-info {
-		margin-top: 120px;
+		margin-top: 60px;
+		.winner {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			padding: 10px;
+			color: yellow;
+			font-size: 30px;
+			text-align: center;
+		}
 		.name {
 			margin-top: 20px;
 			padding: 10px;

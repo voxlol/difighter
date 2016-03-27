@@ -12,7 +12,6 @@ body#application-battle #battle-wrapper {
   position: absolute;
   left: 450px; }
 body#application-battle #battle-fight {
-  width: 1466px;
   height: 1080px;
   background-size: cover;
   background-repeat: no-repeat; }
@@ -28,6 +27,38 @@ body#application-battle #battle-fight {
     background-image: url(../img/backgrounds/5.gif); }
   body#application-battle #battle-fight.background-6 {
     background-image: url(../img/backgrounds/6.gif); }
+  body#application-battle #battle-fight.background-7 {
+    background-image: url(../img/backgrounds/7.gif); }
+  body#application-battle #battle-fight.background-8 {
+    background-image: url(../img/backgrounds/8.gif); }
+  body#application-battle #battle-fight.background-9 {
+    background-image: url(../img/backgrounds/9.gif); }
+  body#application-battle #battle-fight.background-10 {
+    background-image: url(../img/backgrounds/10.gif); }
+  body#application-battle #battle-fight.background-11 {
+    background-image: url(../img/backgrounds/11.gif); }
+  body#application-battle #battle-fight.background-12 {
+    background-image: url(../img/backgrounds/12.gif); }
+  body#application-battle #battle-fight.background-13 {
+    background-image: url(../img/backgrounds/13.gif); }
+  body#application-battle #battle-fight.background-14 {
+    background-image: url(../img/backgrounds/14.gif); }
+  body#application-battle #battle-fight.background-15 {
+    background-image: url(../img/backgrounds/15.gif); }
+  body#application-battle #battle-fight.background-16 {
+    background-image: url(../img/backgrounds/16.gif); }
+  body#application-battle #battle-fight.background-17 {
+    background-image: url(../img/backgrounds/17.gif); }
+  body#application-battle #battle-fight.background-18 {
+    background-image: url(../img/backgrounds/18.gif); }
+  body#application-battle #battle-fight.background-19 {
+    background-image: url(../img/backgrounds/19.gif); }
+  body#application-battle #battle-fight.background-20 {
+    background-image: url(../img/backgrounds/20.gif); }
+  body#application-battle #battle-fight.background-21 {
+    background-image: url(../img/backgrounds/21.gif); }
+  body#application-battle #battle-fight.background-22 {
+    background-image: url(../img/backgrounds/22.gif); }
 body#application-battle #statusbars {
   width: 1200px;
   margin: 75px auto 0 auto; }
@@ -94,7 +125,7 @@ body#application-battle #subject {
     color: #f30;
     text-shadow: 4px 4px #fff; }
 body#application-battle #player-names .player-name {
-  margin-top: 25px;
+  margin-top: 35px;
   height: 45px;
   color: yellow;
   text-shadow: 4px 4px #000;
@@ -111,6 +142,18 @@ body#application-battle #player-names .player_2 .trophy {
   float: right; }
   body#application-battle #player-names .player_2 .trophy img {
     margin-left: 10px; }
+body#application-battle .player-profile-1 {
+  position: absolute;
+  width: 100px;
+  top: 30px;
+  left: 30px;
+  border: 7px solid yellow; }
+body#application-battle .player-profile-2 {
+  position: absolute;
+  width: 100px;
+  top: 30px;
+  right: 30px;
+  border: 7px solid yellow; }
 body#application-battle #fighters {
   position: relative;
   top: 250px; }
@@ -143,34 +186,27 @@ body#application-battle #fighters {
   body#application-battle #fighters .player-box.player-2 {
     position: relative;
     top: 10px; }
-    body#application-battle #fighters .player-box.player-2 .sprite .standing .head {
+    body#application-battle #fighters .player-box.player-2 .sprite .flipX {
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      filter: FlipH;
+      -ms-filter: "FlipH"; }
+    body#application-battle #fighters .player-box.player-2 .sprite img.gif {
+      z-index: 5; }
+    body#application-battle #fighters .player-box.player-2 .sprite .standing img.head {
       position: absolute;
       z-index: 10;
       width: 248px;
       top: -64px;
-      left: 284px; }
-    body#application-battle #fighters .player-box.player-2 .sprite .standing img.gif {
-      z-index: 5;
-      -moz-transform: scaleX(-1);
-      -o-transform: scaleX(-1);
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-      filter: FlipH;
-      -ms-filter: "FlipH"; }
-    body#application-battle #fighters .player-box.player-2 .sprite .fighting .head {
+      right: 32px; }
+    body#application-battle #fighters .player-box.player-2 .sprite .fighting img.head {
       position: absolute;
       z-index: 10;
       width: 248px;
       top: -44px;
-      left: 284px; }
-    body#application-battle #fighters .player-box.player-2 .sprite .fighting img.gif {
-      z-index: 5;
-      -moz-transform: scaleX(-1);
-      -o-transform: scaleX(-1);
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-      filter: FlipH;
-      -ms-filter: "FlipH"; }
+      right: 110px; }
 body#application-battle #battle-preview-box {
   margin-top: 100px; }
   body#application-battle #battle-preview-box .vs-sign {
@@ -190,7 +226,14 @@ body#application-battle #battle-preview-box {
       color: #fff;
       font-size: 11px; }
 body#application-battle #battle-winner-info {
-  margin-top: 120px; }
+  margin-top: 60px; }
+  body#application-battle #battle-winner-info .winner {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: yellow;
+    font-size: 30px;
+    text-align: center; }
   body#application-battle #battle-winner-info .name {
     margin-top: 20px;
     padding: 10px;
