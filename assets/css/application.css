@@ -188,7 +188,7 @@ body#application-battle #battle-preview-box {
     margin-top: 20px; }
     body#application-battle #battle-preview-box .stats .stat-label {
       color: #fff;
-      font-size: 12px; }
+      font-size: 11px; }
 body#application-battle #battle-winner-info {
   margin-top: 120px; }
   body#application-battle #battle-winner-info .name {
