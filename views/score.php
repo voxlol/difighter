@@ -1,3 +1,9 @@
+<?
+include_once '../cls/Battle.php';
+
+$battle = new Battle();
+$standings = $battle->get_battle_results();
+?>
 <div class="container-fluid">
   <div class="row">
     <div class="text-center">
@@ -11,27 +17,16 @@
           <th class="text-right">RATE</th>
         </tr>
         <?
-          for($i = 1; $i < 11; $i++){
+          foreach($standings AS $standing){
         ?>
 
         <tr>
-          <td class="name">Alan Shih</td>
-          <td class="win">100</td>
-          <td class="loss">0</td>
-          <td class="percentage">100%</td>
+          <td class="name"><?=$standing->name?></td>
+          <td class="win"><?=$standing->win?></td>
+          <td class="loss"><?=$standing->loss?></td>
+          <td class="percentage"><?=$standing->rate * 100?>%</td>
         </tr>
-        <tr>
-          <td class="name">Kevin Chiu</td>
-          <td class="win">99</td>
-          <td class="loss">1</td>
-					<td class="percentage">99%</td>
-        </tr>
-        <tr>
-          <td class="name">Peter Yang</td>
-          <td class="win">1</td>
-          <td class="loss">99</td>
-          <td class="percentage">1%</td>
-        </tr>
+
         <?
           }
         ?>
