@@ -1,10 +1,10 @@
 <?php
 	require_once "../settings/config.php";
+	require_once "../cls/functions.php";
 	require_once "../cls/Battle.php";
 	require_once "../cls/Score.php";
 
 	$application = $_GET['application'];
-
 	$body_class = ($application == 'battle' ? 'battle-preview' : '');
 ?>
 

@@ -61,6 +61,28 @@ body#application-battle #fight img {
   50% {
     opacity: 1;
     visibility: visible; } }
+body#application-battle #fighters {
+  position: relative;
+  top: 550px; }
+  body#application-battle #fighters .player-box .sprite img {
+    width: 300px; }
+  body#application-battle #fighters .player-box.player-2 {
+    position: relative;
+    top: 10px; }
+    body#application-battle #fighters .player-box.player-2 .sprite .head {
+      position: absolute;
+      z-index: 10;
+      width: 250px;
+      top: -30px;
+      padding-left: 30px; }
+    body#application-battle #fighters .player-box.player-2 .sprite img.gif {
+      z-index: 5;
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      filter: FlipH;
+      -ms-filter: "FlipH"; }
 body#application-battle #battle-preview-box {
   margin-top: 150px; }
   body#application-battle #battle-preview-box .vs-sign {

@@ -11,21 +11,10 @@ $results = $battle->get_battle();
 			<div class="stats">
 				<?
 					$loop = 1;
+					asort($results['player_1']['skills'], SORT_REGULAR);
+					$results['player_1']['skills'] = array_reverse($results['player_1']['skills']);
 					foreach($results['player_1']['skills'] as $skill_name => $skill_point) {
-						switch($skill_point) {
-							default:
-								$percent = 0;
-							break;
-							case 1:
-								$percent = 33;
-							break;
-							case 2:
-								$percent = 66;
-							break;
-							case 3:
-								$percent = 100;
-							break;
-						}
+						$percent = get_percentage($skill_point);
 				?>
 				<div class="row">
 					<div class="col-sm-4">
@@ -40,6 +29,9 @@ $results = $battle->get_battle();
 					</div>
 				</div>
 				<?
+						if ($loop == 8) {
+							break;
+						}
 						$loop++;
 					}
 				?>
@@ -53,21 +45,11 @@ $results = $battle->get_battle();
 			<div class="name"><?=$results['player_2']['name']?></div>
 			<div class="stats">
 				<?
+					$loop = 1;
+					asort($results['player_2']['skills'], SORT_REGULAR);
+					$results['player_2']['skills'] = array_reverse($results['player_2']['skills']);
 					foreach($results['player_2']['skills'] as $skill_name => $skill_point) {
-						switch($skill_point) {
-							default:
-								$percent = 0;
-							break;
-							case 1:
-								$percent = 33;
-							break;
-							case 2:
-								$percent = 66;
-							break;
-							case 3:
-								$percent = 100;
-							break;
-						}
+						$percent = get_percentage($skill_point);
 				?>
 				<div class="row">
 					<div class="col-sm-4">
@@ -82,6 +64,10 @@ $results = $battle->get_battle();
 					</div>
 				</div>
 				<?
+						if ($loop == 8) {
+							break;
+						}
+						$loop++;
 					}
 				?>
 			</div>
@@ -93,7 +79,46 @@ $results = $battle->get_battle();
 	$background = rand(1, 6);
 	$bg_music = rand(1, 4);
 ?>
-<div id="battle-fight" class="background-<?=$background?>" style="display:none;" data-music="<?=$bg_music?>">
+<div id="battle-fight" class="background-<?=$background?>" style="" data-music="<?=$bg_music?>">
+
+	<div id="subject">
+		<div class="round-1">Round 1</div>
+		<div class="round-2">Round 2</div>
+		<div class="round-3">Round 3</div>
+		<div class="round-4">Round 4</div>
+		<div class="round-5">Round 5</div>
+	</div>
+
+
+	<div id="fighters">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="player-box player-1">
+						<div class="sprite">
+							<div class="standing">
+								<img src="<?=BASE_URL?>assets/img/character-1-stand.gif" />
+							</div>
+							<div class="fighting">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="player-box player-2">
+						<div class="sprite pull-right">
+
+							<div class="standing">
+								<img class="head" src="<?=BASE_URL?>assets/img/anthonyChen.png" />
+								<img class="gif" src="<?=BASE_URL?>assets/img/character-2-stand.gif" />
+							</div>
+							<div class="fighting">
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>
 
