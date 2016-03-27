@@ -61,21 +61,83 @@ body#application-battle #fight img {
   50% {
     opacity: 1;
     visibility: visible; } }
+body#application-battle #subject {
+  height: 300px; }
+  body#application-battle #subject .round .round-number {
+    font-size: 30px;
+    color: #f30;
+    text-shadow: 4px 4px #fff; }
+  body#application-battle #subject .round .subject-title {
+    position: relative;
+    top: 20px;
+    font-size: 50px;
+    color: #f30;
+    text-shadow: 4px 4px #fff; }
+  body#application-battle #subject .winner-name {
+    position: relative;
+    top: 20px;
+    font-size: 50px;
+    color: #f30;
+    text-shadow: 4px 4px #fff; }
+body#application-battle #player-names .player-name {
+  margin-top: 25px;
+  height: 80px;
+  color: yellow;
+  text-shadow: 4px 4px #000;
+  font-size: 30px; }
 body#application-battle #fighters {
   position: relative;
-  top: 550px; }
-  body#application-battle #fighters .player-box .sprite img {
+  top: 300px; }
+  body#application-battle #fighters .hit {
+    position: absolute;
+    z-index: 20; }
+  body#application-battle #fighters .fire {
+    position: absolute;
+    z-index: 30; }
+  body#application-battle #fighters .player-box .sprite .standing img {
     width: 300px; }
+  body#application-battle #fighters .player-box .sprite .fighting img {
+    position: relative;
+    top: 10px;
+    width: 401px; }
+  body#application-battle #fighters .player-box.player-1 .sprite .standing .head {
+    position: absolute;
+    z-index: 10;
+    width: 248px;
+    top: -64px;
+    left: 42px; }
+  body#application-battle #fighters .player-box.player-1 .sprite .fighting .head {
+    position: absolute;
+    z-index: 10;
+    width: 248px;
+    top: -64px;
+    left: 85px; }
+  body#application-battle #fighters .player-box.player-1 .sprite .fighting img.gif {
+    width: 401px; }
   body#application-battle #fighters .player-box.player-2 {
     position: relative;
     top: 10px; }
-    body#application-battle #fighters .player-box.player-2 .sprite .head {
+    body#application-battle #fighters .player-box.player-2 .sprite .standing .head {
       position: absolute;
       z-index: 10;
-      width: 250px;
-      top: -30px;
-      padding-left: 30px; }
-    body#application-battle #fighters .player-box.player-2 .sprite img.gif {
+      width: 248px;
+      top: -64px;
+      left: 284px; }
+    body#application-battle #fighters .player-box.player-2 .sprite .standing img.gif {
+      z-index: 5;
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      filter: FlipH;
+      -ms-filter: "FlipH"; }
+    body#application-battle #fighters .player-box.player-2 .sprite .fighting .head {
+      position: absolute;
+      z-index: 10;
+      width: 248px;
+      top: -44px;
+      left: 284px; }
+    body#application-battle #fighters .player-box.player-2 .sprite .fighting img.gif {
       z-index: 5;
       -moz-transform: scaleX(-1);
       -o-transform: scaleX(-1);
@@ -102,6 +164,40 @@ body#application-battle #battle-preview-box {
       color: #fff;
       font-size: 12px; }
 
+.bounce {
+  animation: bounce 0.7s infinite;
+  -webkit-animation: bounce 0.7s infinite;
+  -moz-animation: bounce 0.7s infinite;
+  -o-animation: bounce 0.7s infinite; }
+
+@keyframes bounce {
+  0% {
+    transform: translateX(-10px); }
+  40% {
+    transform: translateX(-4px); }
+  60% {
+    transform: translateX(-10px); }
+  80% {
+    transform: translateX(-4px); }
+  100% {
+    transform: translateX(-10px); } }
+.bounce-2 {
+  animation: bounce 0.6s infinite;
+  -webkit-animation: bounce 0.6s infinite;
+  -moz-animation: bounce 0.6s infinite;
+  -o-animation: bounce 0.6s infinite; }
+
+@keyframes bounce-2 {
+  0% {
+    transform: translateX(-4px); }
+  30% {
+    transform: translateX(-10px); }
+  50% {
+    transform: translateX(-4px); }
+  70% {
+    transform: translateX(-10px); }
+  100% {
+    transform: translateX(-4px); } }
 body#application-score {
   background-color: #333;
   color: #FFF;

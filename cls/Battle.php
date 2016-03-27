@@ -129,6 +129,10 @@ class Battle {
 				'name' => 'Peter Yang',
 				'skills' => array(1,0,0,0,0,0,2,2,3,3,3,3,3,3,3,2,2,3,3,0,1,0,0,1,0,2,0,3,2,0,1,2,2,0,0,0,0,3,3,3,3,3,3,3,0,0,0,1,0,0,0,0,0,0,0,3,1,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0)
 			),
+			31 => array(
+				'name' => 'Santi Pikula',
+				'skills' => array(3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3)
+			),
 		);
 
 		$this->skills = array(
@@ -245,15 +249,18 @@ class Battle {
 		);
 
 		// Create initial dataset
+		$loop = 0;
 		foreach($hotpot AS $intPlayer) {
 			$player = $this->players[$intPlayer];
 
 			$intFighter++;
 
 			$fighters["player_$intFighter"] = array(
+				'id' => $hotpot[$loop],
 				'name' => $player['name'],
 				'skills' => $this->get_skills($player),
 			);
+			$loop++;
 		}
 
 		$skills = [
@@ -349,6 +356,8 @@ class Battle {
 		$loser = ($totals['player_1'] > $totals['player_2']) ? 'player_2' : 'player_1';
 
 		$fighters['battle']['winner'] = array(
+			'id' => $fighters[$winner]['id'],
+			'player' => $winner,
 			'name' => $fighters[$winner]['name'],
 			'score' => $totals[$winner]
 		);
@@ -375,8 +384,7 @@ class Battle {
 				$data[$intItem]->rate = $data[$intItem]->win / ($data[$intItem]->win + $data[$intItem]->loss);
 			}
 		}
-
-		file_put_contents('../data/results.json', $data);
+		file_put_contents('../data/results.json', json_encode($data));
 	}
 
 	public function get_battle_results() {

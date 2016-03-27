@@ -1,3 +1,3 @@
 <?php
 
-define('BASE_URL', 'http://localhost:8888/di-fighter/');
+define('BASE_URL', '/');

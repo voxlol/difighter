@@ -1,7 +1,6 @@
 <?
 $battle = new Battle();
 $results = $battle->get_battle();
-
 ?>
 <div class="container" id="battle-preview-box" style="display:none;">
 	<div class="row">
@@ -79,14 +78,38 @@ $results = $battle->get_battle();
 	$background = rand(1, 6);
 	$bg_music = rand(1, 4);
 ?>
-<div id="battle-fight" class="background-<?=$background?>" style="" data-music="<?=$bg_music?>">
+<div id="battle-fight" class="background-<?=$background?>" style="display:none;" data-music="<?=$bg_music?>"
+	data-winner="<?=$results['battle']['winner']['player']?>"
+	data-score="<?=$results['battle']['winner']['score']?>"
+	data-winner-id="<?=$results['battle']['winner']['id']?>">
 
-	<div id="subject">
-		<div class="round-1">Round 1</div>
-		<div class="round-2">Round 2</div>
-		<div class="round-3">Round 3</div>
-		<div class="round-4">Round 4</div>
-		<div class="round-5">Round 5</div>
+	<div id="player-names">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="player-name"><?=$results['player_1']['name']?></div>
+				</div>
+				<div class="col-sm-6 text-right">
+					<div class="player-name"><?=$results['player_2']['name']?></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="subject" class="text-center" >
+		<?
+			$loop = 1;
+			foreach($results['battle']['rounds'] as $round) {
+		?>
+		<div class="round round-<?=$loop?>" data-winner="<?=$round['winner']?>" style="display:none;">
+			<div class="round-number">Round <?=$loop?></div>
+			<div class="subject-title"><?=$round['subject']?></div>
+		</div>
+		<?
+				$loop++;
+			}
+		?>
+		<div class="winner-name" style="display:none;"><?=$results['battle']['winner']['name']?> Wins</div>
 	</div>
 
 
@@ -97,9 +120,14 @@ $results = $battle->get_battle();
 					<div class="player-box player-1">
 						<div class="sprite">
 							<div class="standing">
-								<img src="<?=BASE_URL?>assets/img/character-1-stand.gif" />
+								<div class="fire hide"><img src="<?=BASE_URL?>assets/img/fire.gif" /></div>
+								<div class="hit hide"><img src="<?=BASE_URL?>assets/img/hit.png" /></div>
+								<img class="head bounce" src="<?=BASE_URL?>assets/img/players/<?=$results['player_1']['id']?>.png" />
+								<img class="gif" src="<?=BASE_URL?>assets/img/char-1-stand.gif" />
 							</div>
-							<div class="fighting">
+							<div class="fighting hide">
+								<img class="head bounce-2" src="<?=BASE_URL?>assets/img/players/<?=$results['player_1']['id']?>.png" />
+								<img class="gif" src="<?=BASE_URL?>assets/img/char-1-fight.gif" />
 							</div>
 						</div>
 					</div>
@@ -107,12 +135,15 @@ $results = $battle->get_battle();
 				<div class="col-sm-6">
 					<div class="player-box player-2">
 						<div class="sprite pull-right">
-
 							<div class="standing">
-								<img class="head" src="<?=BASE_URL?>assets/img/anthonyChen.png" />
-								<img class="gif" src="<?=BASE_URL?>assets/img/character-2-stand.gif" />
+								<div class="fire hide"><img src="<?=BASE_URL?>assets/img/fire.gif" /></div>
+								<div class="hit hide"><img src="<?=BASE_URL?>assets/img/hit.png" /></div>
+								<img class="head bounce-2" src="<?=BASE_URL?>assets/img/players/<?=$results['player_2']['id']?>.png" />
+								<img class="gif" src="<?=BASE_URL?>assets/img/char-2-stand.gif" />
 							</div>
-							<div class="fighting">
+							<div class="fighting hide">
+								<img class="head bounce-2" src="<?=BASE_URL?>assets/img/players/<?=$results['player_2']['id']?>.png" />
+								<img class="gif" src="<?=BASE_URL?>assets/img/char-2-fight.gif" />
 							</div>
 					</div>
 				</div>
