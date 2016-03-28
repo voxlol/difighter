@@ -5,6 +5,27 @@
 	background-color: #111;
 	color: #eee;
 	padding: 10px;
+	.number-1 {
+		padding: 25px 50px 0 50px;
+		img.medal {
+			position: absolute;
+			right: 60px;
+			width: 100px;
+		}
+		img.profile {
+			border: 5px solid yellow;
+		}
+	}
+	
+	title{
+		float: left;
+
+	}
+	h4{
+		padding-top: 10px;
+		padding-right: 50px;
+	}
+
 	table{
 		border-collapse: separate;
 	  border-spacing: 25px 0;
@@ -20,8 +41,20 @@
 	}
 
 	table td{
-		padding: 22px 0px;
+		padding: 18px 0px;
 		font-size: 11px;
+		&.rank {
+			position: relative;
+			.medals {
+				top:  7px;
+				position: absolute;
+			  display: block;
+			  max-width:35px;
+			  max-height:35px;
+			  width: auto;
+			  height: auto;
+			}
+		}
 		&.name {
 		  text-align: left;
 		}
@@ -35,5 +68,10 @@
 			text-align: right;
 		}
 	}
+	#diLogo{
+		float: left;
+		margin-left: 30px;
+		width:75px;
+		height:75px;
+	}
 }
-

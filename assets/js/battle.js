@@ -37,7 +37,7 @@ $(document).ready(function() {
 	}
 
 	function add_trophy(round_winner) {
-		var trophy_img = '<img src="'+base_url+'assets/img/trophy.gif" />';
+		var trophy_img = '<img src="'+base_url+'assets/img/winner-symbol.png" />';
 		setTimeout(function(){
 			$('#player-names .'+round_winner+' .trophy').append(trophy_img);
 		}, 1000);
