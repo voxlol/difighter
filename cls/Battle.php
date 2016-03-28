@@ -38,6 +38,7 @@ class Battle {
 			$fighters["player_$intFighter"] = array(
 				'id' => $hotpot[$loop],
 				'name' => $player['name'],
+				'quote' => $player['quote'],
 				'skills' => $this->get_skills($player),
 			);
 			$loop++;
@@ -107,6 +108,7 @@ class Battle {
 			}
 		}
 
+		shuffle($sharedSkills);
 		foreach($sharedSkills AS $intSkill=>$skill) {
 			$rating1 = $skills[0][$skill];
 			$rating2 = $skills[1][$skill];
@@ -185,6 +187,24 @@ class Battle {
 		}
 
 		return $results;
+	}
+	
+	public function get_player_standings($standings, $id) {
+		$output = [];
+		foreach($standings AS $standing) {
+			if ($standing->id == $id) {
+				$win = $standing->win + 1;
+				$loss = $standing->loss;
+				$rate = $win / ($win + $loss);
+				$output = array(
+					'win' => $win,
+					'loss' => $loss,
+					'rate' => number_format($rate * 100, 0)
+				);
+				break;
+			}
+		}
+		return $output;
 	}
 
 	private function get_skills($player) {

@@ -17,6 +17,8 @@
 	}
 	$results = $battle->get_battle();
 	$standings = $battle->get_battle_results();
+	
+	$winner = $battle->get_player_standings($standings, $results['battle']['winner']['id']);
 ?>
 
 <!DOCTYPE html>

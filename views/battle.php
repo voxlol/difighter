@@ -182,20 +182,20 @@
 				<div class="name"><?=$results['battle']['winner']['name']?></div>
 				<div class="row records">
 					<div class="col-sm-4 text-center">
-						Wins: 0
+						Wins: <?=$winner['win']?>
 					</div>
 					<div class="col-sm-4 text-center">
-						Loses: 0
+						Loses: <?=$winner['loss']?>
 					</div>
 					<div class="col-sm-4 text-center">
-						Rate: 0%
+						Rate: <?=$winner['rate']?>%
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<div class="quote text-center">Quote goes here Quote goes here Quote goes here Quote goes here </div>
+				<div class="quote text-center">"<?=$results['battle']['winner']['quote']?>"</div>
 			</div>
 		</div>
 	</div>
