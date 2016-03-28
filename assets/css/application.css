@@ -302,8 +302,8 @@ body#application-battle #battle-winner-info {
   #score-table table tr.highlight td {
     color: yellow; }
   #score-table table td {
-    padding: 10px 0px;
-    font-size: 10px; }
+    padding: 22px 0px;
+    font-size: 11px; }
     #score-table table td.name {
       text-align: left; }
     #score-table table td.percentage {

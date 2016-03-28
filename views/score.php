@@ -1,6 +1,12 @@
+<?
+	usort($standings, "cmp");
+?>
 <div id="score-table">
   <div class="row">
     <div class="text-center">
+			<div class="number-1" style="padding: 25px 50px 0 50px;">
+				<img class="img-responsive" src="<?=BASE_URL?>assets/img/players/profile/<?=$standings[0]->id?>.jpg" />
+			</div>
       <table>
         <tr>
 	        <th></th>
@@ -10,7 +16,6 @@
           <th class="text-right">RATE</th>
         </tr>
         <?
-					usort($standings, "cmp");
 					$start = 1;
           foreach($standings AS $standing){
 						$highlight = ($start < 4 ? 'highlight' : '');
@@ -23,6 +28,9 @@
           <td class="percentage"><?=number_format($standing->rate * 100, 0)?>%</td>
         </tr>
         <?
+						if ($start == 10) {
+							break;
+						}
 						$start++;
           }
         ?>
