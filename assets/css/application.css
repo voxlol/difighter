@@ -132,11 +132,11 @@ body#application-battle #player-names .player-name {
   text-shadow: 4px 4px #000;
   font-size: 30px; }
 body#application-battle #player-names .trophy {
-  height: 40px;
+  height: 65px;
   position: relative;
-  margin-top: 10px; }
+  margin-top: 0px; }
   body#application-battle #player-names .trophy img {
-    width: 30px; }
+    width: 45px; }
 body#application-battle #player-names .player_1 .trophy img {
   margin-right: 10px; }
 body#application-battle #player-names .player_2 .trophy {
@@ -291,6 +291,19 @@ body#application-battle #battle-winner-info {
   background-color: #111;
   color: #eee;
   padding: 10px; }
+  #score-table .number-1 {
+    padding: 25px 50px 0 50px; }
+    #score-table .number-1 img.medal {
+      position: absolute;
+      right: 60px;
+      width: 100px; }
+    #score-table .number-1 img.profile {
+      border: 5px solid yellow; }
+  #score-table title {
+    float: left; }
+  #score-table h4 {
+    padding-top: 10px;
+    padding-right: 50px; }
   #score-table table {
     border-collapse: separate;
     border-spacing: 25px 0;
@@ -302,8 +315,18 @@ body#application-battle #battle-winner-info {
   #score-table table tr.highlight td {
     color: yellow; }
   #score-table table td {
-    padding: 22px 0px;
+    padding: 18px 0px;
     font-size: 11px; }
+    #score-table table td.rank {
+      position: relative; }
+      #score-table table td.rank .medals {
+        top: 7px;
+        position: absolute;
+        display: block;
+        max-width: 35px;
+        max-height: 35px;
+        width: auto;
+        height: auto; }
     #score-table table td.name {
       text-align: left; }
     #score-table table td.percentage {
@@ -312,3 +335,8 @@ body#application-battle #battle-winner-info {
       text-align: right; }
     #score-table table td.loss {
       text-align: right; }
+  #score-table #diLogo {
+    float: left;
+    margin-left: 30px;
+    width: 75px;
+    height: 75px; }
