@@ -4,14 +4,15 @@
 <div id="score-table">
   <div class="row">
     <div class="text-center">
-			<div class="logo">
-				<div>
-						<img id="diLogo" src="<?=BASE_URL?>assets/img/DI-logo.png" />
+			<div class="di-logo">
+				<div class="di-icon">
+					<img src="<?=BASE_URL?>assets/img/DI-logo.png" class="img-responsive" />
 				</div>
-				<div class"title">
-					<h4>Digital</h4>
-					<h4>Interactive</h4>
+				<div class="di-title text-left">
+					<div style="font-size: 35px;">DIGITAL</div>
+					<div style="font-size: 16px;">INTERACTIVE</div>
 				</div>
+				<div class="clearfix"></div>
 			</div>
 			<div class="number-1">
 				<img class="medal" src="<?=BASE_URL?>assets/img/goldMedal.png" />
