@@ -183,11 +183,13 @@ class Battle {
 		foreach($data AS $intItem=>$item) {
 			if($item->id == $winner) {
 				$data[$intItem]->win++;
+				$data[$intItem]->total++;
 				$data[$intItem]->rate = $data[$intItem]->win / ($data[$intItem]->win + $data[$intItem]->loss);
 			}
 
 			if($item->id == $loser) {
 				$data[$intItem]->loss++;
+				$data[$intItem]->total++;
 				$data[$intItem]->rate = $data[$intItem]->win / ($data[$intItem]->win + $data[$intItem]->loss);
 			}
 		}
