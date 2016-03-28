@@ -195,7 +195,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<div class="quote text-center">"<?=$results['battle']['winner']['quote']?>"</div>
+				<div class="quote text-center"><?=$results['battle']['winner']['quote']?></div>
 			</div>
 		</div>
 	</div>
