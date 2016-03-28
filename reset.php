@@ -10,7 +10,8 @@ foreach($players AS $id => $player) {
 		'name' => $player['name'],
 		'win' => 0,
 		'loss' => 0,
-		'rate' => 1
+		'rate' => 1,
+		'total' => 0
 	);
 }
 

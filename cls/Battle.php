@@ -14,7 +14,28 @@ class Battle {
 	}
 
 	function get_battle() {
-		$hotpot = array_rand($this->players, 2);
+		
+		$reorder_players = json_decode(file_get_contents('data/results.json'));
+		usort($reorder_players, "cmp_total");
+		//	randomize from lowest 10
+		$total = count($reorder_players) - 10;
+		$player_array = array();
+		$loop = 0;
+		foreach($reorder_players as $player) {
+			$player_array[] = $player;
+			$loop++;
+			if ($loop == 5) {
+				break;
+			}
+		}
+		
+		$select_random = array_rand($player_array, 2);
+		$select_random_1 = $select_random[0];
+		$select_random_2 = $select_random[1];
+		$hotpot = array(
+			$player_array[$select_random_1]->id,
+			$player_array[$select_random_2]->id,
+		);
 		$intFighter = 0;
 		$fighters = array(
 			'battle' => array(
@@ -27,7 +48,7 @@ class Battle {
 				)
 			)
 		);
-
+		
 		// Create initial dataset
 		$loop = 0;
 		foreach($hotpot AS $intPlayer) {
@@ -199,6 +220,7 @@ class Battle {
 				$output = array(
 					'win' => $win,
 					'loss' => $loss,
+					'total' => $win + $loss,
 					'rate' => number_format($rate * 100, 0)
 				);
 				break;
