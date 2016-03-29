@@ -14,7 +14,7 @@ class Battle {
 	}
 
 	function get_battle() {
-		
+
 		$reorder_players = json_decode(file_get_contents('data/results.json'));
 		usort($reorder_players, "cmp_total");
 		//	randomize from lowest 10
@@ -24,11 +24,11 @@ class Battle {
 		foreach($reorder_players as $player) {
 			$player_array[] = $player;
 			$loop++;
-			if ($loop == 5) {
+			if ($loop == 10) {
 				break;
 			}
 		}
-		
+
 		$select_random = array_rand($player_array, 2);
 		$select_random_1 = $select_random[0];
 		$select_random_2 = $select_random[1];
@@ -48,7 +48,7 @@ class Battle {
 				)
 			)
 		);
-		
+
 		// Create initial dataset
 		$loop = 0;
 		foreach($hotpot AS $intPlayer) {
@@ -60,6 +60,7 @@ class Battle {
 				'id' => $hotpot[$loop],
 				'name' => $player['name'],
 				'quote' => $player['quote'],
+				'model' => $player['model'],
 				'skills' => $this->get_skills($player),
 			);
 			$loop++;
@@ -211,7 +212,7 @@ class Battle {
 
 		return $results;
 	}
-	
+
 	public function get_player_standings($standings, $id) {
 		$output = [];
 		foreach($standings AS $standing) {

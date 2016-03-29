@@ -157,57 +157,184 @@ body#application-battle .player-profile-2 {
   border: 7px solid yellow; }
 body#application-battle #fighters {
   position: relative;
-  top: 250px; }
+  top: 150px; }
   body#application-battle #fighters .hit {
     position: absolute;
     z-index: 20; }
   body#application-battle #fighters .fire {
     position: absolute;
     z-index: 30; }
-  body#application-battle #fighters .player-box .sprite .standing img {
-    width: 300px; }
-  body#application-battle #fighters .player-box .sprite .fighting img {
+  body#application-battle #fighters .player-box .sprite .sprite-gif {
+    z-index: 5;
+    position: absolute; }
+  body#application-battle #fighters .player-box .sprite .head {
     position: relative;
-    top: 10px;
-    width: 401px; }
-  body#application-battle #fighters .player-box.player-1 .sprite .standing .head {
-    position: absolute;
     z-index: 10;
-    width: 248px;
-    top: -64px;
-    left: 42px; }
-  body#application-battle #fighters .player-box.player-1 .sprite .fighting .head {
-    position: absolute;
-    z-index: 10;
-    width: 248px;
-    top: -64px;
-    left: 85px; }
-  body#application-battle #fighters .player-box.player-1 .sprite .fighting img.gif {
-    width: 401px; }
-  body#application-battle #fighters .player-box.player-2 {
-    position: relative;
+    width: 250px; }
+  body#application-battle #fighters .player-box .sprite.char-1 .standing .head {
+    top: 0; }
+  body#application-battle #fighters .player-box .sprite.char-1 .standing .sprite-gif {
+    width: 320px;
+    top: 60px; }
+  body#application-battle #fighters .player-box .sprite.char-1 .fighting .head {
     top: 10px; }
-    body#application-battle #fighters .player-box.player-2 .sprite .flipX {
-      -moz-transform: scaleX(-1);
-      -o-transform: scaleX(-1);
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-      filter: FlipH;
-      -ms-filter: "FlipH"; }
-    body#application-battle #fighters .player-box.player-2 .sprite img.gif {
-      z-index: 5; }
-    body#application-battle #fighters .player-box.player-2 .sprite .standing img.head {
-      position: absolute;
-      z-index: 10;
-      width: 248px;
-      top: -64px;
-      right: 32px; }
-    body#application-battle #fighters .player-box.player-2 .sprite .fighting img.head {
-      position: absolute;
-      z-index: 10;
-      width: 248px;
-      top: -44px;
-      right: 110px; }
+  body#application-battle #fighters .player-box .sprite.char-1 .fighting .sprite-gif {
+    width: 360px;
+    top: 100px; }
+  body#application-battle #fighters .player-box .sprite.char-2 .standing .head {
+    top: 0; }
+  body#application-battle #fighters .player-box .sprite.char-2 .standing .sprite-gif {
+    width: 320px;
+    top: 60px; }
+  body#application-battle #fighters .player-box .sprite.char-2 .fighting .head {
+    top: 18px; }
+  body#application-battle #fighters .player-box .sprite.char-2 .fighting .sprite-gif {
+    width: 360px;
+    top: 100px; }
+  body#application-battle #fighters .player-box .sprite.char-3 .standing .head {
+    top: 0; }
+  body#application-battle #fighters .player-box .sprite.char-3 .standing .sprite-gif {
+    width: 320px;
+    top: 50px; }
+  body#application-battle #fighters .player-box .sprite.char-3 .fighting .head {
+    top: 18px; }
+  body#application-battle #fighters .player-box .sprite.char-3 .fighting .sprite-gif {
+    width: 300px;
+    top: 55px; }
+  body#application-battle #fighters .player-box .sprite.char-4 .standing .head {
+    top: 0; }
+  body#application-battle #fighters .player-box .sprite.char-4 .standing .sprite-gif {
+    width: 350px;
+    top: 60px; }
+  body#application-battle #fighters .player-box .sprite.char-4 .fighting .head {
+    top: 18px; }
+  body#application-battle #fighters .player-box .sprite.char-4 .fighting .sprite-gif {
+    width: 350px;
+    top: 15px; }
+  body#application-battle #fighters .player-box .sprite.char-5 .standing .head {
+    top: 0; }
+  body#application-battle #fighters .player-box .sprite.char-5 .standing .sprite-gif {
+    width: 400px;
+    top: 50px; }
+  body#application-battle #fighters .player-box .sprite.char-5 .fighting .head {
+    top: 0px; }
+  body#application-battle #fighters .player-box .sprite.char-5 .fighting .sprite-gif {
+    width: 400px;
+    top: 22px; }
+  body#application-battle #fighters .player-box .sprite.char-6 .standing .head {
+    top: 50px; }
+  body#application-battle #fighters .player-box .sprite.char-6 .standing .sprite-gif {
+    width: 245px;
+    top: 136px; }
+  body#application-battle #fighters .player-box .sprite.char-6 .fighting .head {
+    top: 50px; }
+  body#application-battle #fighters .player-box .sprite.char-6 .fighting .sprite-gif {
+    width: 245px;
+    top: 136px; }
+  body#application-battle #fighters .player-box.player-1 .char-1 .standing .head {
+    left: 0px; }
+  body#application-battle #fighters .player-box.player-1 .char-1 .standing .sprite-gif {
+    left: 0; }
+  body#application-battle #fighters .player-box.player-1 .char-1 .fighting .head {
+    left: 0; }
+  body#application-battle #fighters .player-box.player-1 .char-1 .fighting .sprite-gif {
+    left: -30px; }
+  body#application-battle #fighters .player-box.player-1 .char-2 .standing .head {
+    left: 15px; }
+  body#application-battle #fighters .player-box.player-1 .char-2 .standing .sprite-gif {
+    left: 0; }
+  body#application-battle #fighters .player-box.player-1 .char-2 .fighting .head {
+    left: 0; }
+  body#application-battle #fighters .player-box.player-1 .char-2 .fighting .sprite-gif {
+    left: 0px; }
+  body#application-battle #fighters .player-box.player-1 .char-3 .standing .head {
+    left: 15px; }
+  body#application-battle #fighters .player-box.player-1 .char-3 .standing .sprite-gif {
+    left: -20px; }
+  body#application-battle #fighters .player-box.player-1 .char-3 .fighting .head {
+    left: 0; }
+  body#application-battle #fighters .player-box.player-1 .char-3 .fighting .sprite-gif {
+    left: 0px; }
+  body#application-battle #fighters .player-box.player-1 .char-4 .standing .head {
+    left: 0; }
+  body#application-battle #fighters .player-box.player-1 .char-4 .standing .sprite-gif {
+    left: -20px; }
+  body#application-battle #fighters .player-box.player-1 .char-4 .fighting .head {
+    left: 0; }
+  body#application-battle #fighters .player-box.player-1 .char-4 .fighting .sprite-gif {
+    left: -20px; }
+  body#application-battle #fighters .player-box.player-1 .char-5 .standing .head {
+    left: 0; }
+  body#application-battle #fighters .player-box.player-1 .char-5 .standing .sprite-gif {
+    left: -50px; }
+  body#application-battle #fighters .player-box.player-1 .char-5 .fighting .head {
+    left: 0; }
+  body#application-battle #fighters .player-box.player-1 .char-5 .fighting .sprite-gif {
+    left: -20px; }
+  body#application-battle #fighters .player-box.player-1 .char-6 .standing .head {
+    left: 0; }
+  body#application-battle #fighters .player-box.player-1 .char-6 .standing .sprite-gif {
+    left: 20px; }
+  body#application-battle #fighters .player-box.player-1 .char-6 .fighting .head {
+    left: 0; }
+  body#application-battle #fighters .player-box.player-1 .char-6 .fighting .sprite-gif {
+    left: 20px; }
+  body#application-battle #fighters .player-box.player-2 .flipX {
+    position: relative;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH"; }
+  body#application-battle #fighters .player-box.player-2 .char-1 .standing .head {
+    right: 25px; }
+  body#application-battle #fighters .player-box.player-2 .char-1 .standing .sprite-gif {
+    right: -10px; }
+  body#application-battle #fighters .player-box.player-2 .char-1 .fighting .head {
+    right: 0; }
+  body#application-battle #fighters .player-box.player-2 .char-1 .fighting .sprite-gif {
+    right: -55px; }
+  body#application-battle #fighters .player-box.player-2 .char-2 .standing .head {
+    right: 25px; }
+  body#application-battle #fighters .player-box.player-2 .char-2 .standing .sprite-gif {
+    right: -10px; }
+  body#application-battle #fighters .player-box.player-2 .char-2 .fighting .head {
+    right: 0; }
+  body#application-battle #fighters .player-box.player-2 .char-2 .fighting .sprite-gif {
+    right: -85px; }
+  body#application-battle #fighters .player-box.player-2 .char-3 .standing .head {
+    right: 25px; }
+  body#application-battle #fighters .player-box.player-2 .char-3 .standing .sprite-gif {
+    right: -10px; }
+  body#application-battle #fighters .player-box.player-2 .char-3 .fighting .head {
+    right: 0; }
+  body#application-battle #fighters .player-box.player-2 .char-3 .fighting .sprite-gif {
+    right: -30px; }
+  body#application-battle #fighters .player-box.player-2 .char-4 .standing .head {
+    right: 25px; }
+  body#application-battle #fighters .player-box.player-2 .char-4 .standing .sprite-gif {
+    right: -40px; }
+  body#application-battle #fighters .player-box.player-2 .char-4 .fighting .head {
+    right: 0; }
+  body#application-battle #fighters .player-box.player-2 .char-4 .fighting .sprite-gif {
+    right: -50px; }
+  body#application-battle #fighters .player-box.player-2 .char-5 .standing .head {
+    right: 25px; }
+  body#application-battle #fighters .player-box.player-2 .char-5 .standing .sprite-gif {
+    right: -64px; }
+  body#application-battle #fighters .player-box.player-2 .char-5 .fighting .head {
+    right: 0; }
+  body#application-battle #fighters .player-box.player-2 .char-5 .fighting .sprite-gif {
+    right: -100px; }
+  body#application-battle #fighters .player-box.player-2 .char-6 .standing .head {
+    right: 0; }
+  body#application-battle #fighters .player-box.player-2 .char-6 .standing .sprite-gif {
+    right: 20px; }
+  body#application-battle #fighters .player-box.player-2 .char-6 .fighting .head {
+    right: 0; }
+  body#application-battle #fighters .player-box.player-2 .char-6 .fighting .sprite-gif {
+    right: 20px; }
 body#application-battle #battle-preview-box {
   margin-top: 100px; }
   body#application-battle #battle-preview-box .vs-sign {
@@ -322,7 +449,7 @@ body#application-battle #battle-winner-info {
   #score-table table tr.highlight td {
     color: yellow; }
   #score-table table td {
-    padding: 18px 0px;
+    padding: 17px 0px;
     font-size: 11px; }
     #score-table table td.rank {
       position: relative; }

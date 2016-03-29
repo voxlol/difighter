@@ -6,7 +6,7 @@
 
 	// $debug_battle_preview_box = "";
 	// $debug_battle_winner_info = "";
-	// $debug_battle_fight = "";
+	 $debug_battle_fight = "";
 ?>
 
 
@@ -134,36 +134,40 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
+						<?
+							$standing = '';
+							$fighting = 'hide';
+						?>
 						<div class="player-box player-1">
-							<div class="sprite">
-								<div class="standing">
+							<div class="sprite char-<?=$results['player_1']['model']?>">
+								<div class="standing <?=$standing?>">
 									<div class="fire hide"><img src="<?=BASE_URL?>assets/img/fire.gif" /></div>
 									<div class="hit hide"><img src="<?=BASE_URL?>assets/img/hit.png" /></div>
 									<img class="head bounce" src="<?=BASE_URL?>assets/img/players/head/<?=$results['player_1']['id']?>.png" />
-									<img class="gif" src="<?=BASE_URL?>assets/img/char-1-stand.gif" />
+									<img class="sprite-gif" src="<?=BASE_URL?>assets/img/char-<?=$results['player_1']['model']?>-stand.gif" />
 								</div>
-								<div class="fighting hide">
+								<div class="fighting <?=$fighting?>">
 									<img class="head bounce-2" src="<?=BASE_URL?>assets/img/players/head/<?=$results['player_1']['id']?>.png" />
-									<img class="gif" src="<?=BASE_URL?>assets/img/char-1-fight.gif" />
+									<img class="sprite-gif" src="<?=BASE_URL?>assets/img/char-<?=$results['player_1']['model']?>-fight.gif" />
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="player-box player-2">
-							<div class="sprite pull-right">
-								<div class="standing">
+							<div class="sprite char-<?=$results['player_2']['model']?> pull-right">
+								<div class="standing <?=$standing?>">
 									<div class="fire hide"><img src="<?=BASE_URL?>assets/img/fire.gif" /></div>
 									<div class="hit hide"><img src="<?=BASE_URL?>assets/img/hit.png" /></div>
 									<div class="flipX">
 										<img class="head bounce-2" src="<?=BASE_URL?>assets/img/players/head/<?=$results['player_2']['id']?>.png" />
-										<img class="gif" src="<?=BASE_URL?>assets/img/char-2-stand.gif" />
+										<img class="sprite-gif" src="<?=BASE_URL?>assets/img/char-<?=$results['player_2']['model']?>-stand.gif" />
 									</div>
 								</div>
-								<div class="fighting hide">
+								<div class="fighting <?=$fighting?>">
 									<div class="flipX">
 										<img class="head bounce-2" src="<?=BASE_URL?>assets/img/players/head/<?=$results['player_2']['id']?>.png" />
-										<img class="gif" src="<?=BASE_URL?>assets/img/char-2-fight.gif" />
+										<img class="sprite-gif" src="<?=BASE_URL?>assets/img/char-<?=$results['player_2']['model']?>-fight.gif" />
 									</div>
 								</div>
 							</div>

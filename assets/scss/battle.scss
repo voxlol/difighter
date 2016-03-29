@@ -168,7 +168,7 @@ body#application-battle {
 	}
 	#fighters {
 		position: relative;
-		top: 250px;
+		top: 150px;
 		.hit {
 			position: absolute;
 			z-index: 20;
@@ -179,79 +179,346 @@ body#application-battle {
 		}
 		.player-box {
 			.sprite {
-				.standing {
-					img {
-						width: 300px
+				.sprite-gif {
+					z-index: 5;
+					position:absolute;
+				}
+				.head {
+					position: relative;
+					z-index: 10;
+					width: 250px;
+				}
+				&.char-1 {
+					.standing {
+						.head {
+							top: 0;
+						}
+						.sprite-gif {
+							width: 320px;
+							top: 60px;
+						}
+					}
+					.fighting {
+						.head {
+							top: 10px;
+						}
+						.sprite-gif {
+							width: 360px;
+							top: 100px;
+						}
 					}
 				}
-				.fighting {
-					img {
-						position: relative;
-						top: 10px;
-						width: 401px
+				&.char-2 {
+					.standing {
+						.head {
+							top: 0;
+						}
+						.sprite-gif {
+							width: 320px;
+							top: 60px;
+						}
+					}
+					.fighting {
+						.head {
+							top: 18px;
+						}
+						.sprite-gif {
+							width: 360px;
+							top: 100px;
+						}
+					}
+				}
+				&.char-3 {
+					.standing {
+						.head {
+							top: 0;
+						}
+						.sprite-gif {
+							width: 320px;
+							top: 50px;
+						}
+					}
+					.fighting {
+						.head {
+							top: 18px;
+						}
+						.sprite-gif {
+							width: 300px;
+							top: 55px;
+						}
+					}
+				}
+				&.char-4 {
+					.standing {
+						.head {
+							top: 0;
+						}
+						.sprite-gif {
+							width: 350px;
+							top: 60px;
+						}
+					}
+					.fighting {
+						.head {
+							top: 18px;
+						}
+						.sprite-gif {
+							width: 350px;
+							top: 15px;
+						}
+					}
+				}
+				&.char-5 {
+					.standing {
+						.head {
+							top: 0;
+						}
+						.sprite-gif {
+							width: 400px;
+							top: 50px;
+						}
+					}
+					.fighting {
+						.head {
+							top: 0px;
+						}
+						.sprite-gif {
+							width: 400px;
+							top: 22px;
+						}
+					}
+				}
+				&.char-6 {
+					.standing {
+						.head {
+							top: 50px;
+						}
+						.sprite-gif {
+							width: 245px;
+							top: 136px;
+						}
+					}
+					.fighting {
+						.head {
+							top: 50px;
+						}
+						.sprite-gif {
+							width: 245px;
+							top: 136px;
+						}
 					}
 				}
 			}
 			&.player-1 {
-				.sprite  {
+				.char-1 {
 					.standing {
-						.head {
-							position: absolute;
-							z-index: 10;
-							width: 248px;
-					    top: -64px;
-					    left: 42px;
-						}
+						.head {left: 0px;}
+						.sprite-gif {left: 0;}
 					}
 					.fighting {
-						.head {
-							position: absolute;
-							z-index: 10;
-							width: 248px;
-					    top: -64px;
-					    left: 85px;
-						}
-						img.gif {
-						width: 401px
-						}
+						.head {left: 0;}
+						.sprite-gif {left: -30px;}
+					}
+				}
+				.char-2 {
+					.standing {
+						.head {left: 15px;}
+						.sprite-gif {left: 0;}
+					}
+					.fighting {
+						.head {left: 0;}
+						.sprite-gif {left: 0px;}
+					}
+				}
+				.char-3 {
+					.standing {
+						.head {left: 15px;}
+						.sprite-gif {left: -20px;}
+					}
+					.fighting {
+						.head {left: 0;}
+						.sprite-gif {left: 0px;}
+					}
+				}
+				.char-4 {
+					.standing {
+						.head {left: 0;}
+						.sprite-gif {left: -20px;}
+					}
+					.fighting {
+						.head {left: 0;}
+						.sprite-gif {left: -20px;}
+					}
+				}
+				.char-5 {
+					.standing {
+						.head {left: 0;}
+						.sprite-gif {left: -50px;}
+					}
+					.fighting {
+						.head {left: 0;}
+						.sprite-gif {left: -20px;}
+					}
+				}
+				.char-6 {
+					.standing {
+						.head {left: 0;}
+						.sprite-gif {left: 20px;}
+					}
+					.fighting {
+						.head {left: 0;}
+						.sprite-gif {left: 20px;}
 					}
 				}
 			}
 			&.player-2 {
-				position: relative;
-				top: 10px;
-				.sprite {
-					.flipX {
-						-moz-transform: scaleX(-1);
-						-o-transform: scaleX(-1);
-						-webkit-transform: scaleX(-1);
-						transform: scaleX(-1);
-						filter: FlipH;
-						-ms-filter: "FlipH";
-					}
-					img.gif {
-						z-index: 5;
-					}
+				.flipX {
+					position: relative;
+					-moz-transform: scaleX(-1);
+					-o-transform: scaleX(-1);
+					-webkit-transform: scaleX(-1);
+					transform: scaleX(-1);
+					filter: FlipH;
+					-ms-filter: "FlipH";
+				}
+				.char-1 {
 					.standing {
-						img.head {
-							position: absolute;
-							z-index: 10;
-					    width: 248px;
-					    top: -64px;
-					    right: 32px;
-						}
+						.head {right: 25px;}
+						.sprite-gif {right: -10px;}
 					}
 					.fighting {
-						img.head {
-							position: absolute;
-							z-index: 10;
-					    width: 248px;
-					    top: -44px;
-					    right: 110px;
-						}
+						.head {right: 0;}
+						.sprite-gif {right: -55px;}
+					}
+				}
+				.char-2 {
+					.standing {
+						.head {right: 25px;}
+						.sprite-gif {right: -10px;}
+					}
+					.fighting {
+						.head {right: 0;}
+						.sprite-gif {right: -85px;}
+					}
+				}
+				.char-3 {
+					.standing {
+						.head {right: 25px;}
+						.sprite-gif {right: -10px;}
+					}
+					.fighting {
+						.head {right: 0;}
+						.sprite-gif {right: -30px;}
+					}
+				}
+				.char-4 {
+					.standing {
+						.head {right: 25px;}
+						.sprite-gif {right: -40px;}
+					}
+					.fighting {
+						.head {right: 0;}
+						.sprite-gif {right: -50px;}
+					}
+				}
+				.char-5 {
+					.standing {
+						.head {right: 25px;}
+						.sprite-gif {right: -64px;}
+					}
+					.fighting {
+						.head {right: 0;}
+						.sprite-gif {right: -100px;}
+					}
+				}
+				.char-6 {
+					.standing {
+						.head {right: 0;}
+						.sprite-gif {right: 20px;}
+					}
+					.fighting {
+						.head {right: 0;}
+						.sprite-gif {right: 20px;}
 					}
 				}
 			}
+
+
+
+			// .sprite {
+			// 	.standing {
+			// 	}
+			// 	.fighting {
+			// 		img {
+			// 			position: relative;
+			// 			top: 10px;
+			// 			width: 401px
+			// 		}
+			// 	}
+			// }
+			// .player-box {
+			// 	.sprite {
+			// 		img.head {
+			// 			position: absolute;
+			// 			z-index: 10;
+			// 			width: 248px;
+			// 		}
+			// 		.standing {
+			// 		}
+			// 		.fighting {
+			// 			img.gif {
+			// 				width: 401px
+			// 			}
+			// 		}
+			// 	}
+			// }
+			// &.player-1 {
+			// 	.sprite-1 {
+			// 		.standing {
+			// 			.head {
+			// 		    top: -64px;
+			// 		    left: 42px;
+			// 			}
+			// 		}
+			// 		.fighting {
+			// 			.head {
+			// 		    top: -64px;
+			// 		    left: 85px;
+			// 			}
+			// 		}
+			// 	}
+			// }
+			// &.player-2 {
+			// 	position: relative;
+			// 	top: 10px;
+			// 	.sprite {
+			// 		.flipX {
+			// 			-moz-transform: scaleX(-1);
+			// 			-o-transform: scaleX(-1);
+			// 			-webkit-transform: scaleX(-1);
+			// 			transform: scaleX(-1);
+			// 			filter: FlipH;
+			// 			-ms-filter: "FlipH";
+			// 		}
+			// 		img.gif {
+			// 			z-index: 5;
+			// 		}
+			// 		&.sprite-1 {
+			// 			.standing {
+			// 				img.head {
+			// 			    top: -64px;
+			// 			    right: 32px;
+			// 				}
+			// 			}
+			// 			.fighting {
+			// 				img.head {
+			// 			    top: -44px;
+			// 			    right: 110px;
+			// 				}
+			// 			}
+			// 		}
+			// 	}
+			// }
 		}
 	}
 
