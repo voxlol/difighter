@@ -7,12 +7,12 @@ body {
   color: #fff; }
 
 body#application-battle #battle-wrapper {
-  width: 1470px;
-  height: 1080px;
+  width: 1585px;
+  height: 1100px;
   position: absolute;
   left: 450px; }
 body#application-battle #battle-fight {
-  height: 1080px;
+  height: 1100px;
   background-size: cover;
   background-repeat: no-repeat; }
   body#application-battle #battle-fight.background-1 {
@@ -424,7 +424,7 @@ body#application-battle #battle-winner-info {
     opacity: 0.0; } }
 #score-table {
   width: 450px;
-  height: 1080px;
+  height: 1180px;
   position: absolute;
   background-color: #111;
   color: #eee;
