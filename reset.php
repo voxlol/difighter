@@ -1,7 +1,7 @@
 <?php
 
 include_once 'modules/Kint/Kint.class.php';
-include_once 'data/players.php';
+include_once 'data/players_buffed.php';
 
 $standings = [];
 foreach($players AS $id => $player) {

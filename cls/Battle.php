@@ -6,7 +6,7 @@ class Battle {
 	private $skills;
 
 	function __construct() {
-		include_once 'data/players.php';
+		include_once 'data/players_buffed.php';
 		include_once 'data/skills.php';
 
 		$this->players = $players;
