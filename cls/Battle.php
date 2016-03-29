@@ -24,7 +24,7 @@ class Battle {
 		foreach($reorder_players as $player) {
 			$player_array[] = $player;
 			$loop++;
-			if ($loop == 10) {
+			if ($loop == 5) {
 				break;
 			}
 		}
@@ -162,6 +162,7 @@ class Battle {
 		$fighters['battle']['winner'] = array(
 			'id' => $fighters[$winner]['id'],
 			'player' => $winner,
+			'quote' => $fighters[$winner]['quote'],
 			'name' => $fighters[$winner]['name'],
 			'score' => $totals[$winner]
 		);

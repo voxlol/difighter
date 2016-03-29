@@ -6,7 +6,7 @@
 
 	// $debug_battle_preview_box = "";
 	// $debug_battle_winner_info = "";
-	 $debug_battle_fight = "";
+	//  $debug_battle_fight = "";
 ?>
 
 
@@ -192,7 +192,7 @@
 						Loses: <?=$winner['loss']?>
 					</div>
 					<div class="col-sm-4 text-center">
-						Rate: <?=$winner['rate']?>%
+						Win Rate: <?=$winner['rate']?>%
 					</div>
 				</div>
 			</div>
