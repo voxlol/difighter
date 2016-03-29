@@ -3,14 +3,16 @@
 	$debug_battle_preview_box = "display:none;";
 	$debug_battle_winner_info = "display:none;";
 	$debug_battle_fight = "display:none;";
+	$debug_battle_di = "display:none;";
 
 	// $debug_battle_preview_box = "";
 	// $debug_battle_winner_info = "";
-	//  $debug_battle_fight = "";
+	// $debug_battle_fight = "";
+	// $debug_battle_di = "";
 ?>
 
 
-<div id="battle-wrapper">
+<div id="battle-wrapper" data-show-market="<?=SHOW_SIGN?>">
 	<div class="container" id="battle-preview-box" style="<?=$debug_battle_preview_box?>">
 		<div class="row">
 			<div class="col-sm-5">
@@ -192,7 +194,7 @@
 						Loses: <?=$winner['loss']?>
 					</div>
 					<div class="col-sm-4 text-center">
-						Win Rate: <?=$winner['rate']?>%
+						Rate: <?=$winner['rate']?>%
 					</div>
 				</div>
 			</div>
@@ -203,4 +205,19 @@
 			</div>
 		</div>
 	</div>
+	
+
+	<div class="container" id="battle-di" style="<?=$debug_battle_di?>">
+		<div class="row" style="margin-top: 320px;">
+			<div class="col-sm-12">
+				<div class="blink_me text-center">
+					<div style="font-size: 30px; margin-bottom: 20px;">To see more of </div>
+					<div style="font-size: 50px; margin-bottom: 20px;">DIGIAL INTERACTIVE's</div>
+					<div style="font-size: 40px; margin-bottom: 20px;">capabilties, visit </div>
+					<div style="font-size: 50px;">2B205</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+	
 </div>

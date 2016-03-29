@@ -1,6 +1,7 @@
 <?php
 	if(!empty($_SERVER['BASE_URL'])) {
 		define('BASE_URL', $_SERVER['BASE_URL']);
+		define('SHOW_SIGN', $_SERVER['SHOW_SIGN']);
 	} else {
 		require_once "local_config.php";
 	}

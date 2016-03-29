@@ -415,6 +415,13 @@ body#application-battle #battle-winner-info {
     transform: translateX(-10px); }
   100% {
     transform: translateX(-4px); } }
+.blink_me {
+  animation: blinker 1s linear infinite;
+  color: yellow; }
+
+@keyframes blinker {
+  50% {
+    opacity: 0.0; } }
 #score-table {
   width: 450px;
   height: 1080px;

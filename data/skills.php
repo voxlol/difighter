@@ -87,4 +87,13 @@ $skills = array(
 	'Neural Networks',
 	'Bayesian Networks',
 	'Simulations',
+	'Motion Graphics',
+	'Animation',
+	'3D Modelling',
+	'Texturing',
+	'UI / Graphic Design',
+	'Illustration',
+	'Art Direction',
+	'Brand Management',
+	'Audio Engineering'
 );

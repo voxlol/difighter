@@ -609,3 +609,12 @@ body#application-battle {
  70% {transform: translateX(-10px);}
  100% {transform: translateX(-4px);}
 }
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+	color: yellow;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0.0; }
+}

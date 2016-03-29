@@ -121,7 +121,19 @@ $(document).ready(function() {
 		$('#battle-winner-info').fadeIn(500, function(){
 			setTimeout(function(){
 				$('#battle-winner-info').fadeOut(500, function(){
-					new_battle(winner_id);
+					var show_market = $('#battle-wrapper').attr('data-show-market');
+					if(show_market == 'true') {
+						play_sound_effect('di', 0);
+						$('#battle-di').fadeIn(500, function(){
+							setTimeout(function(){
+								$('#battle-winner-info').fadeOut(500, function(){
+									new_battle(winner_id);
+								});
+							}, 6000);
+						});
+					} else {
+						new_battle(winner_id);
+					}
 				});
 			}, 5000);
 		});
