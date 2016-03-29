@@ -211,8 +211,7 @@
 		<div class="row" style="margin-top: 320px;">
 			<div class="col-sm-12">
 				<div class="blink_me text-center">
-					<div style="font-size: 35px; margin-bottom: 20px;">To see more of capabilities of</div>
-					<div style="font-size: 50px; margin-bottom: 20px;">DIGIAL INTERACTIVE,</div>
+					<div style="font-size: 45px; margin-bottom: 20px;">To see more of demos</div>
 					<div style="font-size: 60px; margin-bottom: 20px;">visit <span style="color: #fff;">2B205</span></div>
 				</div> 
 			</div>
