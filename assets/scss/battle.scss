@@ -1,18 +1,19 @@
 body {
 	background-color: #020044;
 	color: #fff;
+	overflow:hidden;
 }
 body#application-battle {
 //	background: url(../img/backgrounds/background1.gif)  no-repeat;
 //	background-size: 1525px 1080px;
 	#battle-wrapper {
-		width: 1585px;
-		height: 1100px;
+		width: 1470px;
+		height: 1080px;
 		position: absolute;
 		left: 450px;
 	}
 	#battle-fight {
-		height: 1100px;
+		height: 1080px;
 		background-size: cover;
 		background-repeat: no-repeat;
 		&.background-1 {background-image: url(../img/backgrounds/1.gif);}
