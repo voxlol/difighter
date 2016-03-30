@@ -14,9 +14,9 @@ class Battle {
 	}
 
 	function get_battle() {
-
 		$reorder_players = json_decode(file_get_contents('data/results.json'));
 		usort($reorder_players, "cmp_total");
+		$reorder_players = shuffle_assoc($reorder_players);
 		//	randomize from lowest 10
 		$total = count($reorder_players) - 10;
 		$player_array = array();
@@ -28,7 +28,6 @@ class Battle {
 				break;
 			}
 		}
-
 		$select_random = array_rand($player_array, 2);
 		$select_random_1 = $select_random[0];
 		$select_random_2 = $select_random[1];
@@ -68,70 +67,53 @@ class Battle {
 
 		$skills = [
 			$fighters['player_1']['skills'],
-			$skills2 = $fighters['player_2']['skills']
+			$fighters['player_2']['skills']
 		];
 
 		// Merge skills
-		foreach($skills[0] AS $skill=>$rating) {
-			if(!array_key_exists($skill, $skills[1])) {
-				$skills[1][$skill] = 0;
+		$player_1_skill = [];
+		foreach($skills[0] AS $player_skill => $rating) {
+			if ($rating > 0) {
+				$player_1_skill[$player_skill] = $rating;
 			}
 		}
-
-		$sharedSkills = []; // Shared skills
-		$sharedActualSkills = []; // Shared skills that are not 0
-
-		foreach($skills[1] AS $skill=>$rating) {
-			if(!array_key_exists($skill, $skills[0])) {
-				$skills[0][$skill] = 0;
-			} else {
-				$sharedActualSkills[] = $skill;
+		$player_2_skill = [];
+		foreach($skills[1] AS $player_skill => $rating) {
+			if ($rating > 0) {
+				$player_2_skill[$player_skill] = $rating;
 			}
 		}
-
-		$intSkill = 0;
-
-		foreach($sharedActualSkills AS $skill) {
-			$intSkill++;
-
-			if($intSkill == 5) {
-				$sharedSkills[] = $skill;
-				break;
-			}
-		}
+		$combined_skills = array_merge($player_1_skill, $player_2_skill);
+		$combined_skills = shuffle_assoc($combined_skills);
 
 		$fighters['player_1']['skills'] = $skills[0];
 		$fighters['player_2']['skills'] = $skills[1];
-
+		
 		// Minimum 5 skill catch
-		while(count($skills[0]) < 5) {
-			$skill = $this->skills[array_rand($this->skills, 1)];
-
-			while(array_key_exists($skill, $skills[0])) {
-				$skill = $this->skills[array_rand($this->skills, 1)];
-			}
-
-			$skills[0][$skill] = 0;
-			$skills[1][$skill] = 0;
-		}
+		// while(count($skills[0]) < 5) {
+		// 	$skill = $this->skills[array_rand($this->skills, 1)];
+		// 
+		// 	while(array_key_exists($skill, $skills[0])) {
+		// 		$skill = $this->skills[array_rand($this->skills, 1)];
+		// 	}
+		// 
+		// 	$skills[0][$skill] = 0;
+		// 	$skills[1][$skill] = 0;
+		// }
 
 		$rounds = [];
 
 		// Generate Rounds
-		while(count($sharedSkills) < 5) {
-			foreach($skills[0] AS $skill=>$rating) {
-				if(count($sharedSkills) == 5) {
-					break;
-				}
-
-				if(!array_key_exists($skill, $sharedSkills)) {
-					$sharedSkills[] = $skill;
-				}
+		$count = 0;
+		foreach($combined_skills as $skill_key => $skill_value) {
+			$round_skills[$count] = $skill_key;
+			$count++;
+			if($count == 5) {
+				break;
 			}
 		}
 
-		shuffle($sharedSkills);
-		foreach($sharedSkills AS $intSkill=>$skill) {
+		foreach($round_skills AS $intSkill => $skill) {
 			$rating1 = $skills[0][$skill];
 			$rating2 = $skills[1][$skill];
 
@@ -245,4 +227,5 @@ class Battle {
 
 		return $skills;
 	}
+	
 }
