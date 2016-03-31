@@ -154,6 +154,9 @@ class Battle {
 			'name' => $fighters[$loser]['name'],
 			'score' => $totals[$loser]
 		);
+		
+		$_SESSION['winner'] = $fighters[$winner]['id'];
+		$_SESSION['loser'] = $fighters[$loser]['id'];
 
 		$winner = $fighters[$winner]['name'];
 		$loser = $fighters[$loser]['name'];

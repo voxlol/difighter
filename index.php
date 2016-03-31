@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	if(!empty($_SERVER['BASE_URL'])) {
 		define('BASE_URL', $_SERVER['BASE_URL']);
 		define('SHOW_SIGN', $_SERVER['SHOW_SIGN']);
@@ -13,8 +14,8 @@
 
 
 	$battle = new Battle();
-	if (!empty($_GET['winner']) && !empty($_GET['loser'])) {
-		$battle->update_standings($_GET['winner'], $_GET['loser']);
+	if (!empty($_SESSION['winner']) && !empty($_SESSION['loser'])) {
+		$battle->update_standings($_SESSION['winner'], $_SESSION['loser']);
 	}
 	$results = $battle->get_battle();
 	$standings = $battle->get_battle_results();
@@ -38,6 +39,6 @@
 ?>
 <script src="<?=BASE_URL?>assets/js/jquery.js"></script>
 <script src="<?=BASE_URL?>assets/js/bootstrap.min.js"></script>
-<script src="<?=BASE_URL?>assets/js/battle.js"></script>
+<script src="<?=BASE_URL?>assets/js/battle.js?v=1"></script>
 </body>
 </html>

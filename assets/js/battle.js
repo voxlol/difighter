@@ -141,7 +141,7 @@ $(document).ready(function() {
 
 	//	Start New Battle
 	function new_battle(winner_id) {
-		window.location = base_url + 'index.php?application=battle&winner='+winner_id+'&loser='+loser_id;
+		window.location = base_url;
 	}
 
 	//	battle
